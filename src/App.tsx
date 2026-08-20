@@ -6,6 +6,7 @@ import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { PWAInstallBanner } from "./components/layout/PWAInstallBanner";
 import { HeroExperience } from "./components/hero/HeroExperience";
 import { PictorialMarquee } from "./components/sections/PictorialMarquee";
+import { InteractiveProjectRoadmap } from "./components/sections/InteractiveProjectRoadmap";
 import { CorporateCampusShowcase } from "./components/sections/CorporateCampusShowcase";
 import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
 import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
@@ -77,7 +78,7 @@ export const App: React.FC = () => {
       />
 
       <main className="flex-1">
-        {/* Visual Hero Experience with Corporate HQ Background (Vivid & Highly Visible) */}
+        {/* Visual Hero Experience with Corporate HQ Background */}
         <HeroExperience
           onOpenRFQ={() => handleOpenRFQ()}
           onOpenProjectBuilder={handleOpenProjectBuilder}
@@ -85,6 +86,11 @@ export const App: React.FC = () => {
 
         {/* Continuous Horizontal Pictorial Marquee Scroller */}
         <PictorialMarquee />
+
+        {/* Interactive Turnkey Project Execution Roadmap */}
+        <InteractiveProjectRoadmap
+          onOpenRFQ={handleOpenRFQ}
+        />
 
         {/* Full-Bleed Corporate Campus & Headquarters Showcase */}
         <CorporateCampusShowcase
