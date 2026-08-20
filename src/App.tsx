@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { ModalRFQ } from "./components/layout/ModalRFQ";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
+import { PWAInstallBanner } from "./components/layout/PWAInstallBanner";
 import { HeroExperience } from "./components/hero/HeroExperience";
 import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
 import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
@@ -20,19 +21,39 @@ import { CaseStudies } from "./components/sections/CaseStudies";
 import { TechIntelligence } from "./components/sections/TechIntelligence";
 import { AboutMission } from "./components/sections/AboutMission";
 import { ContactLeadGen } from "./components/sections/ContactLeadGen";
+import { triggerHaptic } from "./utils/haptics";
 
 export const App: React.FC = () => {
   const [rfqModalOpen, setRfqModalOpen] = useState(false);
   const [selectedRfqSector, setSelectedRfqSector] = useState<string | undefined>(undefined);
   const [selectedRfqProduct, setSelectedRfqProduct] = useState<string | undefined>(undefined);
 
+  // Register PWA Service Worker for Android offline caching
+  useEffect(() => {
+    if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js").catch(() => {
+          // Ignore registration errors
+        });
+      });
+    }
+
+    // Check URL parameters for Android App shortcuts (e.g. ?action=rfq)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("action") === "rfq") {
+      setRfqModalOpen(true);
+    }
+  }, []);
+
   const handleOpenRFQ = (sectorId?: string, productName?: string) => {
+    triggerHaptic(20);
     setSelectedRfqSector(sectorId);
     setSelectedRfqProduct(productName);
     setRfqModalOpen(true);
   };
 
   const handleOpenProjectBuilder = () => {
+    triggerHaptic(15);
     const el = document.getElementById("project-builder");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -40,6 +61,7 @@ export const App: React.FC = () => {
   };
 
   const handleSelectSectorFromCarousel = (sectorId: string) => {
+    triggerHaptic(10);
     const el = document.getElementById(`sector-${sectorId}`);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -48,6 +70,9 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
+      {/* Android 1-Tap PWA Install Banner */}
+      <PWAInstallBanner />
+
       {/* Top Navbar */}
       <Navbar
         onOpenRFQ={handleOpenRFQ}

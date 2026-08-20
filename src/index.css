@@ -13,11 +13,22 @@
     --color-brand-border: #E2E8F0;
   }
 
+  html {
+    /* Android / Mobile Native Scrolling & Bounce Prevention */
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: contain;
+  }
+
   body {
     background-color: #FFFFFF;
     color: #0F172A;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     overflow-x: hidden;
+    /* Touch manipulation for instant tap response without 300ms delay */
+    touch-action: manipulation;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
   }
 }
 
@@ -52,10 +63,10 @@
   box-shadow: 0 16px 36px -12px rgba(0, 135, 68, 0.12);
 }
 
-/* Clean Custom Scrollbar */
+/* Clean Touch Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -67,35 +78,7 @@
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
-}
-
-/* Technical Corner Accents */
-.tech-corner-light {
-  position: relative;
-}
-
-.tech-corner-light::before,
-.tech-corner-light::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-color: rgba(0, 135, 68, 0.5);
-  pointer-events: none;
-}
-
-.tech-corner-light::before {
-  top: 0;
-  left: 0;
-  border-top: 2px solid;
-  border-left: 2px solid;
-}
-
-.tech-corner-light::after {
-  bottom: 0;
-  right: 0;
-  border-bottom: 2px solid;
-  border-right: 2px solid;
+/* Android Safe Area Utilities */
+.safe-area-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom), 12px);
 }

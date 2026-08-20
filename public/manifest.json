@@ -2,11 +2,25 @@
   "name": "HS ONE STEP SOLUTIONS",
   "short_name": "HS OneStep",
   "description": "One Partner. Multiple Solutions. Complete Project Execution. Serving Government, Public & Private Sector.",
-  "start_url": "/",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#FFFFFF",
   "theme_color": "#008744",
   "orientation": "portrait-primary",
+  "dir": "ltr",
+  "lang": "en-US",
+  "categories": [
+    "business",
+    "productivity",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "/logo.png",
@@ -19,6 +33,56 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Submit RFQ / BOQ",
+      "short_name": "Instant RFQ",
+      "description": "Submit tender specification or Bill of Quantities",
+      "url": "/?action=rfq",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "CAD Floorplan Explorer",
+      "short_name": "Floorplan",
+      "description": "Inspect interactive hospital departments and equipment",
+      "url": "/#floorplan",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Interactive Project Builder",
+      "short_name": "Builder",
+      "description": "Configure multi-sector scope in 4 steps",
+      "url": "/#project-builder",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "12 Specialized Sectors",
+      "short_name": "Sectors",
+      "description": "Explore all 12 operational disciplines",
+      "url": "/#sectors",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
