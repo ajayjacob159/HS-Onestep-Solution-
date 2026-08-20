@@ -5,6 +5,7 @@ import { ModalRFQ } from "./components/layout/ModalRFQ";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { PWAInstallBanner } from "./components/layout/PWAInstallBanner";
 import { HeroExperience } from "./components/hero/HeroExperience";
+import { PictorialMarquee } from "./components/sections/PictorialMarquee";
 import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
 import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
 import { VendorComparison } from "./components/sections/VendorComparison";
@@ -18,7 +19,6 @@ import { GovernmentPublicPrivate } from "./components/sections/GovernmentPublicP
 import { GlobalSupplyMap } from "./components/sections/GlobalSupplyMap";
 import { TrustPillars } from "./components/sections/TrustPillars";
 import { CaseStudies } from "./components/sections/CaseStudies";
-import { TechIntelligence } from "./components/sections/TechIntelligence";
 import { AboutMission } from "./components/sections/AboutMission";
 import { ContactLeadGen } from "./components/sections/ContactLeadGen";
 import { triggerHaptic } from "./utils/haptics";
@@ -28,17 +28,13 @@ export const App: React.FC = () => {
   const [selectedRfqSector, setSelectedRfqSector] = useState<string | undefined>(undefined);
   const [selectedRfqProduct, setSelectedRfqProduct] = useState<string | undefined>(undefined);
 
-  // Register PWA Service Worker for Android offline caching
   useEffect(() => {
     if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/sw.js").catch(() => {
-          // Ignore registration errors
-        });
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
       });
     }
 
-    // Check URL parameters for Android App shortcuts (e.g. ?action=rfq)
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("action") === "rfq") {
       setRfqModalOpen(true);
@@ -70,23 +66,26 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
-      {/* Android 1-Tap PWA Install Banner */}
+      {/* Android PWA Install Banner */}
       <PWAInstallBanner />
 
-      {/* Top Navbar */}
+      {/* Clean Corporate Navbar */}
       <Navbar
         onOpenRFQ={handleOpenRFQ}
         onOpenProjectBuilder={handleOpenProjectBuilder}
       />
 
       <main className="flex-1">
-        {/* Hero Experience */}
+        {/* Visual Hero Experience with Corporate HQ Background */}
         <HeroExperience
           onOpenRFQ={() => handleOpenRFQ()}
           onOpenProjectBuilder={handleOpenProjectBuilder}
         />
 
-        {/* Skanvi-Style Category Strip Carousel */}
+        {/* Continuous Horizontal Pictorial Marquee Scroller */}
+        <PictorialMarquee />
+
+        {/* Skanvi-Style Sector Carousel */}
         <CategoryStripCarousel
           onSelectSector={handleSelectSectorFromCarousel}
         />
@@ -102,12 +101,12 @@ export const App: React.FC = () => {
         {/* The One Step Model (8 Stages) */}
         <OneStepModel />
 
-        {/* 12 Sectors Grid with Skanvi-Style Cards & Deep-Dive Modals */}
+        {/* Pictorial 12-Sectors Grid */}
         <SectorsGrid
           onOpenRFQ={handleOpenRFQ}
         />
 
-        {/* Flagship Turnkey Hospital Ecosystem (15 Stages) */}
+        {/* Flagship Turnkey Hospital Ecosystem */}
         <HospitalEcosystem
           onOpenRFQ={handleOpenRFQ}
         />
@@ -115,12 +114,12 @@ export const App: React.FC = () => {
         {/* Simulated Central Project Telemetry Dashboard */}
         <ProjectDashboardConcept />
 
-        {/* Institutional Procurement Catalog & BOQ Selector */}
+        {/* Institutional Procurement Catalog */}
         <ProcurementCatalog
           onOpenRFQ={handleOpenRFQ}
         />
 
-        {/* Interactive Project Builder (4-Step Wizard) */}
+        {/* Interactive Project Builder */}
         <ProjectBuilder
           onOpenRFQ={() => handleOpenRFQ()}
         />
@@ -139,9 +138,6 @@ export const App: React.FC = () => {
         {/* Case Studies */}
         <CaseStudies />
 
-        {/* AI Digital Layer Preview */}
-        <TechIntelligence />
-
         {/* Corporate Mission & Story */}
         <AboutMission
           onOpenRFQ={() => handleOpenRFQ()}
@@ -151,12 +147,12 @@ export const App: React.FC = () => {
         <ContactLeadGen />
       </main>
 
-      {/* Corporate Footer with Official Logo & Sitemap */}
+      {/* Streamlined Corporate Footer */}
       <Footer
         onOpenRFQ={handleOpenRFQ}
       />
 
-      {/* Android & Mobile Quick-Action Navigation Bar */}
+      {/* Mobile Floating Quick-Action Bar */}
       <MobileBottomBar
         onOpenRFQ={handleOpenRFQ}
         onOpenProjectBuilder={handleOpenProjectBuilder}
