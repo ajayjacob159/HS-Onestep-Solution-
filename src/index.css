@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand-green: #008744;
+    --color-brand-green-dark: #065F38;
+    --color-brand-gold: #D4AF37;
+    --color-brand-gold-dark: #B8960C;
+    --color-brand-bg: #FFFFFF;
+    --color-brand-surface: #F8FAFC;
+    --color-brand-border: #E2E8F0;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #0F172A;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Skanvi-Style Light Blueprint & Architectural Grids */
+.bg-blueprint-light {
+  background-image: 
+    linear-gradient(rgba(0, 135, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 135, 68, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-dots-light {
+  background-image: radial-gradient(rgba(0, 135, 68, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism for Light Theme */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-panel-light-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-light-hover:hover {
+  background: #FFFFFF;
+  border-color: rgba(0, 135, 68, 0.35);
+  box-shadow: 0 16px 36px -12px rgba(0, 135, 68, 0.12);
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Technical Corner Accents */
+.tech-corner-light {
+  position: relative;
+}
+
+.tech-corner-light::before,
+.tech-corner-light::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(0, 135, 68, 0.5);
+  pointer-events: none;
+}
+
+.tech-corner-light::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.tech-corner-light::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
