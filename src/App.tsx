@@ -9,6 +9,7 @@ import { PictorialMarquee } from "./components/sections/PictorialMarquee";
 import { InteractiveProjectRoadmap } from "./components/sections/InteractiveProjectRoadmap";
 import { CorporateCampusShowcase } from "./components/sections/CorporateCampusShowcase";
 import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
+import { TechIntelligence } from "./components/sections/TechIntelligence";
 import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
 import { VendorComparison } from "./components/sections/VendorComparison";
 import { OneStepModel } from "./components/sections/OneStepModel";
@@ -89,6 +90,11 @@ export const App: React.FC = () => {
 
         {/* Interactive Turnkey Project Execution Roadmap */}
         <InteractiveProjectRoadmap
+          onOpenRFQ={handleOpenRFQ}
+        />
+
+        {/* IT Technology, Software & AI Automations Engine */}
+        <TechIntelligence
           onOpenRFQ={handleOpenRFQ}
         />
 

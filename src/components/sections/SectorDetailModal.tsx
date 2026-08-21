@@ -58,7 +58,7 @@ export const SectorDetailModal: React.FC<SectorDetailModalProps> = ({
               SECTOR OVERVIEW & EXECUTION SCOPE
             </h4>
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-              {sector.fullDesc}
+              {(sector.fullDesc || sector.overview)}
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export const SectorDetailModal: React.FC<SectorDetailModalProps> = ({
               TURNKEY DELIVERABLES & BOQ SCHEDULES
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {sector.keyDeliverables.map((deliv, i) => (
+              {(sector.keyDeliverables || sector.capabilities || []).map((deliv, i) => (
                 <div key={i} className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start space-x-2.5">
                   <Layers className="w-4 h-4 text-[#008744] flex-shrink-0 mt-0.5" />
                   <span className="text-xs text-slate-800 font-medium">{deliv}</span>

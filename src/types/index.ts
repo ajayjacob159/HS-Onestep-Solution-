@@ -1,19 +1,70 @@
 export interface Sector {
   id: string;
   title: string;
-  slug: string;
   subtitle: string;
-  shortDesc: string;
-  fullDesc: string;
-  iconName: string;
-  category: "healthcare" | "infrastructure" | "commercial" | "institutional";
-  badge: string;
+  category: "healthcare" | "infrastructure" | "commercial" | "institutional" | "technology";
   isFlagship?: boolean;
-  capabilities: string[];
-  keyDeliverables: string[];
-  specifications: { label: string; value: string }[];
+  badge: string;
+  tagline?: string;
+  overview: string;
+  fullDesc?: string;
   representativeVisual: string;
-  ctaText: string;
+  iconName: string;
+  specifications: { label: string; value: string }[];
+  capabilities: string[];
+  keyDeliverables?: string[];
+  procurementItems: string[];
+  [key: string]: any;
+}
+
+export interface RFQPayload {
+  organizationName: string;
+  contactPerson: string;
+  email: string;
+  phone: string;
+  sector: string;
+  projectScope: string;
+  estimatedTimeline: string;
+  boqAttached: boolean;
+  notes?: string;
+  [key: string]: any;
+}
+
+export interface ProcurementProduct {
+  id: string;
+  name: string;
+  category: string;
+  subCategory?: string;
+  sectorId?: string;
+  badge?: string;
+  typicalUnit?: string;
+  leadTimePlaceholder?: string;
+  description: string;
+  image?: string;
+  standards: string[];
+  specs: any;
+  [key: string]: any;
+}
+
+export interface CaseStudy {
+  id: string;
+  title: string;
+  clientType: string;
+  sector: string;
+  location?: string;
+  badge?: string;
+  projectScope?: string;
+  projectTimeline?: string;
+  keyRequirements?: string[];
+  solutionsDelivered?: string[];
+  outcome?: string;
+  status?: string;
+  timeline?: string;
+  scope?: string;
+  metrics?: { label: string; value: string }[];
+  image?: string;
+  description?: string;
+  [key: string]: any;
 }
 
 export interface EcosystemStage {
@@ -21,51 +72,34 @@ export interface EcosystemStage {
   stageNum: string;
   title: string;
   shortTitle: string;
-  category: "civil" | "engineering" | "medical" | "interior" | "commercial" | "safety" | "commissioning";
-  description: string;
+  category: string;
+  description?: string;
+  iconName?: string;
+  specs: string;
   deliverables: string[];
   equipmentList: string[];
-  specs: string;
-  iconName: string;
-}
-
-export interface ProcurementProduct {
-  id: string;
-  name: string;
-  category: string;
-  subCategory: string;
-  specs: string;
-  typicalUnit: string;
-  standards: string[];
-  leadTimePlaceholder: string;
-  description: string;
-}
-
-export interface CaseStudy {
-  id: string;
-  title: string;
-  clientType: "Government Entity" | "Public Healthcare Trust" | "Private Hospital Chain" | "Commercial Developer" | "Educational Institution" | "Industrial Enterprise";
-  sector: string;
-  location: string;
-  projectScope: string;
-  keyRequirements: string[];
-  solutionsDelivered: string[];
-  projectTimeline: string;
-  outcome: string;
-  badge: string;
-  status: "COMING_SOON" | "ARCHIVED_CONCEPT";
+  duration?: string;
+  riskFactor?: string;
+  [key: string]: any;
 }
 
 export interface ProjectBuilderState {
   sector: string;
+  sectorId?: string;
+  facilityArea?: number;
+  capacityUnits?: number;
   requirementType: string;
   services: string[];
-  estimatedTimeline: string;
-  projectScale: string;
-  location: string;
+  disciplines?: string[];
+  timelineMonths?: number;
+  estimatedTimeline?: string;
+  projectScale?: string;
+  location?: string;
   organization: string;
-  contactName: string;
+  organizationType?: string;
+  contactName?: string;
   contactEmail: string;
-  contactPhone: string;
-  notes: string;
+  contactPhone?: string;
+  notes?: string;
+  [key: string]: any;
 }

@@ -25,7 +25,7 @@ export const ProcurementCatalog: React.FC<ProcurementCatalogProps> = ({ onOpenRF
     const matchesCategory = selectedCategory === "All Categories" || prod.category === selectedCategory;
     const matchesSearch = searchQuery === "" || 
       prod.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      prod.subCategory.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (prod.subCategory || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
       prod.specs.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });

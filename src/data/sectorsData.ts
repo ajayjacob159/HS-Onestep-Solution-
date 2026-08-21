@@ -2,427 +2,352 @@ import { Sector } from "../types";
 
 export const SECTORS: Sector[] = [
   {
-    id: "hospital-development",
-    title: "Hospital Development",
-    slug: "hospital-development",
-    subtitle: "Turnkey Healthcare Facility Development",
-    shortDesc: "Complete hospital development from greenfield site planning, civil works, MEP, and cleanroom interiors to medical gas, OT/ICU suites, equipment deployment, and final commissioning.",
-    fullDesc: "Positioned as our flagship turnkey execution capability: we coordinate the complete lifecycle from architectural layouts and civil engineering to specialized hospital infrastructure, cleanrooms, medical equipment deployment, and statutory commissioning.",
-    iconName: "Building2",
-    category: "healthcare",
-    badge: "Flagship Capability",
-    isFlagship: true,
-    capabilities: [
-      "Facility Master Planning & Architectural Layouts",
-      "Hospital-Grade Civil & Structural Construction",
-      "Specialized MEP, Cleanroom & Medical HVAC",
-      "Medical Gas Pipeline Systems (MGPS)",
-      "Modular Operation Theatres (OT) & ICU Suites",
-      "B2B Healthcare Furniture & Ergonomic Fit-Outs",
-      "Complete Diagnostic & Medical Equipment Deployment",
-      "Statutory Compliance, Testing & Commissioning"
-    ],
-    keyDeliverables: [
-      "Civil & Structural Works",
-      "Modular OT & Cleanroom Infrastructure",
-      "Medical Gas Systems (MGPS)",
-      "High-Acuity ICU/CCU Setups",
-      "Complete Diagnostics & Imaging",
-      "Dietary & CSSD Facility Integration"
-    ],
+    id: "it-software-development",
+    title: "IT Technology & Software Engineering",
+    subtitle: "Enterprise Platforms, Custom Web/Mobile Apps & Cloud ERPs",
+    category: "technology",
+    badge: "DIGITAL TRANSFORMATION",
+    tagline: "High-Performance Software Engineering Built to Scale Global Operations",
+    overview: "We architect and engineer robust, enterprise-grade software solutions, custom web and mobile platforms, cloud-native ERPs, and Hospital Management Information Systems (HMIS). Designed with bank-grade security and frictionless scalability to accelerate modern institutional operations.",
+    representativeVisual: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Code2",
     specifications: [
-      { label: "Deployment Scope", value: "Greenfield & Brownfield" },
-      { label: "Execution Model", value: "Single-Vendor Turnkey" },
-      { label: "Compliance Focus", value: "Hospital & Institutional Standards" },
-      { label: "Integration Tier", value: "End-to-End Civil + Tech + Med" }
+      { label: "Architecture", value: "Cloud-Native Microservices" },
+      { label: "Security", value: "SOC 2 Type II & ISO 27001" },
+      { label: "Platforms", value: "Web, iOS, Android & ERP" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE HOSPITAL SOLUTIONS"
+    capabilities: [
+      "Custom Enterprise SaaS & Web Application Development",
+      "Native iOS & Android Mobile Apps",
+      "Integrated Hospital Management & ERP Systems (HMIS)",
+      "High-Volume API Pipelines & Cloud Infrastructure",
+      "Legacy Code Modernization & Migration"
+    ],
+    procurementItems: [
+      "Enterprise Cloud Server Licenses",
+      "HMIS Hospital Information Systems",
+      "Custom PMO Project Portals",
+      "Secure Payment & Identity Gateways"
+    ]
+  },
+  {
+    id: "ai-automations",
+    title: "AI Automations & Process Scaling",
+    subtitle: "Eliminating Manual Bottlenecks to Scale Up Rapidly Worldwide",
+    category: "technology",
+    badge: "NEXT-GEN AI ENGINE",
+    tagline: "Autonomous Agentic Workflows & Robotic Process Automation (RPA)",
+    overview: "Transform manual, repetitive operations into autonomous, zero-error digital workflows. From automated invoice processing and inventory replenishment to computer vision quality inspection and AI agent assistants, we empower organizations to scale up at global velocity with reduced overhead.",
+    representativeVisual: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Cpu",
+    specifications: [
+      { label: "Efficiency", value: "Up to 10x Speed" },
+      { label: "Error Rate", value: "99.9% Zero-Defect" },
+      { label: "Deployment", value: "On-Prem / Private Cloud" }
+    ],
+    capabilities: [
+      "AI Robotic Process Automation (RPA) for Operations",
+      "Intelligent Document Processing (IDP) & Automated Invoicing",
+      "Computer Vision for Construction & Manufacturing QA",
+      "Autonomous 24/7 AI Customer & Support Agents",
+      "Predictive Supply Chain & Procurement Forecasting"
+    ],
+    procurementItems: [
+      "Private LLM & AI Automation Licenses",
+      "Computer Vision Edge Processing Hardware",
+      "Automated Workflow Orchestrators",
+      "Real-Time Telemetry Bots"
+    ]
+  },
+  {
+    id: "digital-growth-marketing",
+    title: "Digital Marketing & Global Scaling",
+    subtitle: "Omnichannel Acquisition, Corporate Branding & Market Expansion",
+    category: "commercial",
+    badge: "GLOBAL EXPANSION",
+    tagline: "Data-Driven Digital Growth to Dominate Markets Globally",
+    overview: "We engineer full-funnel digital marketing strategies, AI-driven performance advertising, corporate brand authority, and global search/answer engine optimization (SEO & AEO) to position your enterprise as an undisputed industry leader across domestic and international markets.",
+    representativeVisual: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
+    iconName: "TrendingUp",
+    specifications: [
+      { label: "Reach", value: "Global Omnichannel" },
+      { label: "Strategy", value: "Performance & AEO / SEO" },
+      { label: "Analytics", value: "Real-Time ROI Tracking" }
+    ],
+    capabilities: [
+      "Corporate Brand Identity & Visual Positioning",
+      "Search Engine & Answer Engine Optimization (SEO / AEO)",
+      "High-Conversion B2B & Institutional Lead Generation",
+      "Targeted Multi-Platform Performance Ad Campaigns",
+      "Global PR & Reputation Management"
+    ],
+    procurementItems: [
+      "Growth Marketing Suites",
+      "Omnichannel CRM & Lead Capture Engines",
+      "Content & Visual Asset Production",
+      "Global PR Distribution Packages"
+    ]
+  },
+  {
+    id: "hospital-development",
+    title: "Hospital Development (Turnkey)",
+    subtitle: "Complete Healthcare Infrastructure from Greenfield to NABH Handover",
+    category: "healthcare",
+    isFlagship: true,
+    badge: "FLAGSHIP EXECUTION",
+    tagline: "The Master One Step Healthcare Lifecycle",
+    overview: "Our flagship discipline delivers complete multi-specialty healthcare facilities from empty site to operational opening under a single contract. Synchronizing architectural design, heavy civil framing, cleanroom modular OTs, medical gas pipelines (MGPS), advanced radiology suites, and statutory commissioning.",
+    representativeVisual: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Building2",
+    specifications: [
+      { label: "Capacity Scale", value: "20 to 500+ Beds" },
+      { label: "Standards", value: "NABH, HTM-0201, ISO 5" },
+      { label: "Delivery", value: "Turnkey Key-In-Hand" }
+    ],
+    capabilities: [
+      "Integrated Architectural, Structural & BIM Planning",
+      "Class 100 Modular Operation Theatres with HEPA H14",
+      "Medical Gas Pipeline Systems (MGPS) with Liquid Oxygen",
+      "Diagnostic Imaging Suites (1.5T MRI / 128-Slice CT)",
+      "Statutory Clinical Commissioning & Staff Training"
+    ],
+    procurementItems: [
+      "Modular OT Wall Panels & Hermetic Doors",
+      "Ceiling Surgical Pendants & LED OT Lights",
+      "Liquid Oxygen Manifolds & Degreased Copper Lines",
+      "Motorized Intensive Care Beds & Central Telemetry"
+    ]
   },
   {
     id: "medical-surgical",
-    title: "Medical & Surgical",
-    slug: "medical-surgical",
-    subtitle: "Advanced Medical Equipment & Surgical Infrastructure",
-    shortDesc: "End-to-end procurement and installation of diagnostic equipment, surgical suites, modular OT infrastructure, ICU life support, and patient-care technology.",
-    fullDesc: "Integrated procurement and deployment of precision medical devices, diagnostic radiology systems, operating theater equipment, intensive care monitoring, and surgical instrumentation for institutional healthcare providers.",
-    iconName: "Stethoscope",
+    title: "Medical & Surgical Equipment",
+    subtitle: "Tier-1 Diagnostic Imaging, Critical Care & Surgical Suites",
     category: "healthcare",
-    badge: "Healthcare Tech",
-    capabilities: [
-      "Medical Equipment Procurement & Deployment",
-      "Surgical Suites & Electrosurgical Units",
-      "Modular OT Integration & Surgical Pendants",
-      "Diagnostic Imaging & Radiology Systems",
-      "ICU Multi-Parameter Patient Monitors & Ventilators",
-      "Patient-Care Beds, Stretchers & Crash Carts",
-      "Medical Consumables & Sterile Processing Units",
-      "Institutional Healthcare Procurement Coordination"
-    ],
-    keyDeliverables: [
-      "Operation Theatre (OT) Workstations",
-      "Diagnostic Imaging (CT/X-Ray/Ultrasound)",
-      "ICU Critical Care Infrastructure",
-      "Surgical Instrument Sets & Autoclaves",
-      "Centralized Patient Monitoring Stations"
-    ],
+    badge: "MEDTECH SOURCING",
+    tagline: "Direct Sourcing and Precision Calibration of Critical Medical Devices",
+    overview: "Procurement, delivery, installation, and calibration of clinical equipment across major hospital departments, with manufacturer-certified warranties and comprehensive service level agreements.",
+    representativeVisual: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80",
+    iconName: "HeartPulse",
     specifications: [
-      { label: "Procurement Tier", value: "Institutional & Enterprise" },
-      { label: "Equipment Grade", value: "Hospital Standard" },
-      { label: "Lifecycle Support", value: "Installation & Calibration" },
-      { label: "Supply Model", value: "Consolidated Procurement" }
+      { label: "Compliance", value: "CE, US-FDA, AERB" },
+      { label: "Warranty", value: "5-Year SLA Backed" },
+      { label: "Sourcing", value: "Global Tier-1 OEMs" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE MEDICAL SOLUTIONS"
+    capabilities: [
+      "1.5T / 3.0T MRI Systems & Multi-Slice CT Scanners",
+      "Digital C-Arm, Mammography & Flat-Panel X-Ray",
+      "Advanced ICU Ventilators & Multi-Para Monitors",
+      "High-Frequency Electrosurgical Units & Laparoscopy",
+      "Complete Central Sterile Supply Department (CSSD)"
+    ],
+    procurementItems: [
+      "1.5T MRI Superconducting System",
+      "128-Slice Low-Dose CT Scanner",
+      "ICU Invasive / Non-Invasive Ventilators",
+      "High-Pressure Steam Sterilizers (CSSD)"
+    ]
   },
   {
     id: "construction-infrastructure",
     title: "Construction & Infrastructure",
-    slug: "construction-infrastructure",
-    subtitle: "Institutional Civil Engineering & Turnkey Works",
-    shortDesc: "Turnkey institutional construction, civil engineering, MEP systems, building materials, commercial interiors, and large-scale structural development.",
-    fullDesc: "Comprehensive infrastructure execution managing civil construction, reinforced structural works, mechanical, electrical, and plumbing (MEP) engineering, interior fit-outs, and heavy construction material logistics.",
-    iconName: "HardHat",
+    subtitle: "Heavy Civil Engineering, Industrial Facilities & Turnkey Fit-Outs",
     category: "infrastructure",
-    badge: "Civil Engineering",
-    capabilities: [
-      "Institutional Civil Construction & Structural Works",
-      "Turnkey Building & Campus Infrastructure",
-      "Core MEP (Mechanical, Electrical, Plumbing) Systems",
-      "Commercial & Institutional Interior Fit-Outs",
-      "Bulk Construction Materials Supply & Logistics",
-      "Specialized Industrial Flooring & Wall Systems",
-      "Project Management & Site Engineering Oversight"
-    ],
-    keyDeliverables: [
-      "Turnkey Institutional Buildings",
-      "Integrated MEP Infrastructure",
-      "Structural Steel & RCC Framing",
-      "Architectural Finishes & Fit-Outs",
-      "Site Civil & Utility Engineering"
-    ],
+    badge: "CIVIL & STRUCTURAL",
+    tagline: "High-Tolerance Civil Execution Built for Decades of Heavy Operation",
+    overview: "Full-scope civil engineering, reinforced concrete framing, heavy structural steel fabrication, specialized radiation shielding, seismic foundations, and institutional facility construction.",
+    representativeVisual: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Hammer",
     specifications: [
-      { label: "Project Types", value: "Institutional, Commercial & Public" },
-      { label: "Procurement", value: "Turnkey Material + Execution" },
-      { label: "Engineering", value: "Full-Cycle MEP & Civil" },
-      { label: "Oversight", value: "Dedicated Project Management" }
+      { label: "Engineering", value: "Heavy Civil & Structural Steel" },
+      { label: "Safety", value: "Zero-Lost-Time Standards" },
+      { label: "BIM", value: "Level 3 Clashing-Free" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE CONSTRUCTION SOLUTIONS"
+    capabilities: [
+      "Earthwork, Deep Foundation Piling & RCC Framing",
+      "Prefabricated Structural Steel PEB Structures",
+      "Radiation Shielded Bunkers for Linear Accelerators",
+      "Industrial Grade Flooring & Cleanroom Partitions",
+      "Statutory Fire, Municipal & Environmental Clearances"
+    ],
+    procurementItems: [
+      "High-Yield TMT Steel & Structural Beams",
+      "Ready-Mix High-Strength Concrete (M40+)",
+      "High-Density Lead & Barite Radiation Shielding",
+      "Industrial Heavy-Duty Epoxy Floor Systems"
+    ]
   },
   {
     id: "energy",
-    title: "Energy & Power Solutions",
-    slug: "energy",
-    subtitle: "Critical Power Infrastructure & Backup Systems",
-    shortDesc: "Heavy-duty electrical infrastructure, continuous power solutions, industrial backup systems, distribution panels, and power equipment procurement.",
-    fullDesc: "Modular energy and electrical systems designed for zero-interruption institutional environments. Sourcing and installation of transformers, high-capacity generators, UPS networks, and smart energy distribution boards.",
+    title: "Energy & Critical Power Solutions",
+    subtitle: "Substations, Redundant DG Synchronizers, Solar & High-Capacity UPS",
+    category: "infrastructure",
+    badge: "CRITICAL POWER",
+    tagline: "Uninterrupted Power Architecture with Zero Millisecond Transfer",
+    overview: "Engineering, installation, and commissioning of primary grid connections, HT/LT substations, diesel generator auto-synchronization systems, modular online UPS networks, and commercial solar microgrids.",
+    representativeVisual: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80",
     iconName: "Zap",
-    category: "infrastructure",
-    badge: "Power & Utilities",
-    capabilities: [
-      "Institutional Energy Infrastructure Engineering",
-      "Industrial Electrical Distribution & Substations",
-      "Critical Backup Systems & DG Synchronization",
-      "Online UPS & Battery Storage Banks",
-      "HT/LT Switchgears & Power Panels",
-      "Energy Efficiency Audits & Monitoring Systems",
-      "Modular Power Equipment Procurement"
-    ],
-    keyDeliverables: [
-      "HT/LT Electrical Distribution Panels",
-      "Industrial Diesel Generators & Auto-Mains Failure",
-      "High-Capacity Online Medical/Industrial UPS",
-      "Substation Infrastructure & Transformers",
-      "Harmonic Filters & Power Factor Correction"
-    ],
     specifications: [
-      { label: "System Redundancy", value: "N+1 / Tier-Grade Ready" },
-      { label: "Application", value: "Hospitals, Plants & Institutions" },
-      { label: "Scope", value: "Design, Sourcing & Integration" },
-      { label: "Modularity", value: "Expandable Architectures" }
+      { label: "Uptime", value: "99.999% Redundancy" },
+      { label: "Transfer Time", value: "0ms Seamless" },
+      { label: "Scale", value: "Up to 5MVA Substations" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE ENERGY SOLUTIONS"
-  },
-  {
-    id: "blood-bank-solutions",
-    title: "Blood Bank Solutions",
-    slug: "blood-bank-solutions",
-    subtitle: "Specialized Cold Chain & Blood Processing Infrastructure",
-    shortDesc: "Dedicated medical-technology solutions for institutional blood banks: ultra-low refrigeration, plasma freezers, component separators, and sterile storage environments.",
-    fullDesc: "Specialized vertical delivering end-to-end blood bank facility setups. From automated blood collection monitors and component centrifuges to -80°C deep freezers, platelet agitators, and temperature-controlled cold-chain management.",
-    iconName: "Droplet",
-    category: "healthcare",
-    badge: "Specialized Medical Tech",
     capabilities: [
-      "Complete Blood Bank Facility Planning & Layout",
-      "Ultra-Low Temperature (-80°C & -40°C) Storage",
-      "Blood Component Centrifuges & Separators",
-      "Platelet Agitators & Temperature Incubators",
-      "Blood Collection Monitors & Donor Lounges",
-      "Continuous Cold Chain Monitoring & Alarms",
-      "Sterile Cryogenic Storage & Testing Systems"
+      "33kV / 11kV HT Substation Engineering & Transformers",
+      "Auto-Mains Failure (AMF) DG Synchronizing Panels",
+      "Online Double-Conversion Modular Medical UPS Systems",
+      "Rooftop & Ground-Mounted Commercial Solar PV",
+      "Harmonic Filtration & Automated Power Factor Correction"
     ],
-    keyDeliverables: [
-      "Ultra-Low Plasma Freezers & Blood Refrigerators",
-      "Automated Component Extractors",
-      "Sterile Tube Sealers & Agitators",
-      "Ergonomic Blood Donor Stations",
-      "Telemetry Cold-Chain Monitoring Hub"
-    ],
-    specifications: [
-      { label: "Temperature Control", value: "Down to -86°C Precision" },
-      { label: "Monitoring", value: "24/7 Redundant Telemetry" },
-      { label: "Standard", value: "Medical Cold-Chain Protocol" },
-      { label: "Deployment", value: "Turnkey Clean Laboratory Room" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE BLOOD BANK SOLUTIONS"
-  },
-  {
-    id: "tiles-granite-marble",
-    title: "Tiles, Granite & Marble",
-    slug: "tiles-granite-marble",
-    subtitle: "Architectural Surfaces & Institutional Stone",
-    shortDesc: "Large-scale procurement and installation of hospital-grade anti-bacterial tiles, high-traffic commercial flooring, premium natural granite, and architectural marble.",
-    fullDesc: "Institutional surface solutions providing heavy-duty vitrified tiles, specialized seamless antibacterial flooring for healthcare, premium architectural stone for facades, and bulk supply coordination for mega projects.",
-    iconName: "Grid",
-    category: "commercial",
-    badge: "Architectural Surfaces",
-    capabilities: [
-      "Institutional Flooring & Anti-Bacterial Healthcare Surfaces",
-      "High-Traffic Commercial & Industrial Vitrified Tiles",
-      "Premium Natural Granite & Architectural Marble",
-      "Exterior Cladding & Heavy-Duty Paving Systems",
-      "Large-Format Slabs & Precision Edge Finishes",
-      "Direct Mill & Quarry Sourcing at Scale",
-      "Supply Coordination & Installation Logistics"
-    ],
-    keyDeliverables: [
-      "Hospital-Grade Anti-Microbial Flooring",
-      "Heavy-Duty Vitrified Commercial Tiles",
-      "Premium Polished Granite & Marble Slabs",
-      "Acoustic & Slip-Resistant Surface Systems",
-      "Bulk Material Container Logistics"
-    ],
-    specifications: [
-      { label: "Material Range", value: "Full-Body, Marble, Granite & Vinyl" },
-      { label: "Quality Grade", value: "Heavy Institutional Duty" },
-      { label: "Logistics", value: "Direct Bulk Quarry/Factory Supply" },
-      { label: "Applications", value: "Hospitals, Airports & Campuses" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE SURFACES & STONE"
-  },
-  {
-    id: "fire-safety",
-    title: "Fire & Safety",
-    slug: "fire-safety",
-    subtitle: "Integrated Fire Protection & Life Safety Systems",
-    shortDesc: "End-to-end fire safety infrastructure: addressable fire alarm systems, sprinkler networks, hydrant systems, clean-agent suppression, and emergency egress planning.",
-    fullDesc: "Comprehensive life safety solutions designed to protect critical assets and human life in hospitals, commercial towers, industrial plants, and government facilities.",
-    iconName: "ShieldAlert",
-    category: "infrastructure",
-    badge: "Life Safety",
-    capabilities: [
-      "Addressable Fire Detection & Alarm Systems",
-      "Automatic Fire Sprinkler & Wet Riser Hydrants",
-      "Clean Agent (FM-200 / Novec 1230) Gas Suppression",
-      "Fire Pumps, Valves & Pressure Regulators",
-      "Passive Fire Stopping & Fire Doors",
-      "Smoke Extraction & Pressurization Fans",
-      "Audits, Testing & Statutory Commissioning"
-    ],
-    keyDeliverables: [
-      "Multi-Loop Addressable Fire Alarm Panels",
-      "Automatic Sprinkler Piping & Hydrant Networks",
-      "Clean Agent Gas Flooding for Server/OT Rooms",
-      "Certified Fire-Rated Doors & Emergency Hardware",
-      "Integrated Fire Water Pump Stations"
-    ],
-    specifications: [
-      { label: "Coverage Scope", value: "Industrial, Commercial & Healthcare" },
-      { label: "System Types", value: "Active & Passive Fire Safety" },
-      { label: "Integration", value: "BMS & Emergency Automation" },
-      { label: "Verification", value: "Pressure Testing & Sign-Off" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE FIRE & SAFETY"
-  },
-  {
-    id: "b2b-furniture",
-    title: "B2B Furniture",
-    slug: "b2b-furniture",
-    subtitle: "Institutional, Healthcare & Commercial Workspaces",
-    shortDesc: "Heavy-duty hospital beds, patient room furniture, executive corporate offices, educational seating, and high-density institutional workstations.",
-    fullDesc: "Large-scale institutional furniture procurement and installation. We furnish complete multi-story facilities including hospital wards, consultation rooms, corporate headquarters, auditoriums, and administrative offices.",
-    iconName: "Armchair",
-    category: "commercial",
-    badge: "Institutional Fit-Out",
-    capabilities: [
-      "Specialized Hospital & Ward Bed Systems",
-      "Executive Corporate Office & Boardroom Furniture",
-      "High-Density Workstations & Acoustic Partitions",
-      "Educational Campus Classrooms & Lecture Halls",
-      "Government Institutional Desking & Seating",
-      "Heavy-Duty Reception, Lounge & Waiting Area Sets",
-      "Turnkey Ergonomic Layout & Installation"
-    ],
-    keyDeliverables: [
-      "ICU & Motorized Hospital Beds",
-      "Modular Open-Plan Workstation Clusters",
-      "Auditorium & Tiered Lecture Hall Seating",
-      "Ergonomic Task Chairs & Storage Credenzas",
-      "Custom Reception Counters & Wall Paneling"
-    ],
-    specifications: [
-      { label: "Volume Capacity", value: "100 to 10,000+ Seating Units" },
-      { label: "Durability Tier", value: "Commercial Grade BIFMA/ISO Ready" },
-      { label: "Customization", value: "Bespoke Architectural Finishes" },
-      { label: "Deployment", value: "Direct Site Assembly & Staging" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE B2B FURNITURE"
+    procurementItems: [
+      "Dry-Type Cast Resin Power Transformers",
+      "Acoustic Silent Diesel Generators (500kVA+)",
+      "Modular True Online UPS (N+1 Config)",
+      "Tier-1 Bifacial Solar PV Panels"
+    ]
   },
   {
     id: "commercial-kitchens",
-    title: "Commercial & Industrial Kitchens",
-    slug: "commercial-kitchens",
-    subtitle: "Heavy-Duty Food Service & Dietary Facilities",
-    shortDesc: "Turnkey commercial kitchens for hospitals, hotels, industrial cafeterias, and institutional dining halls: stainless steel fabrication, cooking ranges, refrigeration, and exhaust systems.",
-    fullDesc: "Engineering high-volume, hygienically certified food production environments. We coordinate commercial kitchen design, stainless steel AISI 304 fabrication, combi-ovens, cold rooms, dishwashing automation, and fire-safe ventilation.",
-    iconName: "UtensilsCrossed",
+    title: "Commercial & Dietary Kitchens",
+    subtitle: "Food-Grade SS 304 Prep Lines, Cold Rooms & Commercial Ventilation",
     category: "commercial",
-    badge: "Food Service Tech",
-    capabilities: [
-      "Hospital Dietary Kitchen & Tray Assembly Setup",
-      "Industrial & Corporate Mega-Cafeteria Systems",
-      "Heavy-Duty Stainless Steel (SS 304) Fabrication",
-      "Commercial Cooking Ranges, Steamers & Combi-Ovens",
-      "Walk-In Cold Rooms & Blast Freezers",
-      "Commercial Warewashing & Conveyor Dishwashers",
-      "Kitchen Ventilation, Ecology Units & Fire Suppression"
-    ],
-    keyDeliverables: [
-      "Walk-In Chiller & Freezer Rooms",
-      "Industrial Combi Steamers & Tilting Pans",
-      "Custom Stainless Steel Prep Tables & Sinks",
-      "Automated Flight-Type Dishwashing Systems",
-      "Exhaust Hoods with Wet Chemical Fire Protection"
-    ],
+    badge: "HOSPITALITY & DIETARY",
+    tagline: "HACCP-Compliant High-Capacity Culinary & Institutional Food Service Lines",
+    overview: "Turnkey planning, supply, and installation of commercial kitchens for hospitals, hotels, universities, and industrial cafeterias. Fabricated with food-grade SS 304 stainless steel, walk-in cold rooms, dishwashing automation, and fire suppression hoods.",
+    representativeVisual: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80",
+    iconName: "UtensilsCrossed",
     specifications: [
-      { label: "Grade Standard", value: "AISI 304 Food-Grade Stainless Steel" },
-      { label: "Capacity Scope", value: "500 to 15,000+ Meals/Day" },
-      { label: "Utility Integration", value: "Gas, Electric, Steam & Water" },
-      { label: "Safety System", value: "Kitchen-Guard Ansul Fire Ready" }
+      { label: "Material", value: "Food-Grade AISI 304" },
+      { label: "Standards", value: "HACCP & NSF Certified" },
+      { label: "Capacity", value: "200 to 5,000 Meals/Day" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE KITCHEN SOLUTIONS"
+    capabilities: [
+      "Heavy-Duty Stainless Steel Cooking Ranges & Combi-Ovens",
+      "Walk-In Chillers, Deep Freezers & Cold Prep Stations",
+      "Commercial Exhaust Hoods with Ansul Fire Suppression",
+      "Conveyorized Automated Dishwashing Systems",
+      "Insulated Thermal Meal Delivery Trolleys"
+    ],
+    procurementItems: [
+      "Custom SS 304 Fabrication Worktables & Sinks",
+      "Electric / Gas 4-Burner Ranges with Ovens",
+      "Walk-In Modular Cold Storage Rooms",
+      "Thermal Patient Tray Delivery Carts"
+    ]
   },
   {
-    id: "institutional-equipment",
-    title: "Institutional Equipment",
-    slug: "institutional-equipment",
-    subtitle: "Specialized Systems for Civic & Educational Facilities",
-    shortDesc: "End-to-end equipment provisioning for laboratories, research centers, universities, municipal facilities, sports complexes, and administrative headquarters.",
-    fullDesc: "Integrated procurement of specialized non-medical equipment required across large government, civic, and academic institutions.",
-    iconName: "Layers",
-    category: "institutional",
-    badge: "Civic & Educational",
-    capabilities: [
-      "Academic & Scientific Laboratory Workbenches",
-      "Audio-Visual & Smart Classroom Telemetry",
-      "Campus Security & Access Control Infrastructure",
-      "Public Address & Mass Notification Systems",
-      "Waste Management & Industrial Compactor Units",
-      "Facilities Maintenance & Utility Machinery",
-      "Large-Scale Procurement Standardization"
-    ],
-    keyDeliverables: [
-      "Chemical-Resistant Lab Bench Systems",
-      "Campus-Wide Integrated IP-CCTV & Access Control",
-      "Smart Interactive Display Hubs",
-      "Water Purification & Treatment Plants",
-      "Industrial Facility Maintenance Equipment"
-    ],
-    specifications: [
-      { label: "Target Sectors", value: "Universities, Labs, Civic Complexes" },
-      { label: "Procurement Model", value: "Centralized Supply & Staging" },
-      { label: "Compliance", value: "Institutional Specification Standards" },
-      { label: "Warranty", value: "Comprehensive Equipment SLA" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE INSTITUTIONAL EQUIPMENT"
-  },
-  {
-    id: "government-procurement",
-    title: "Government Procurement",
-    slug: "government-procurement",
-    subtitle: "Structured Public Sector Supply & Execution",
-    shortDesc: "Structured supply coordination for government tenders, state healthcare missions, civic infrastructure development, and defense/public utilities.",
-    fullDesc: "Specialized execution division structured around institutional compliance, documentation rigor, BOQ alignment, and transparent supply-chain logistics for public sector entities.",
-    iconName: "Landmark",
-    category: "institutional",
-    badge: "Public Sector Ready",
-    capabilities: [
-      "Tender & BOQ Requirement Mapping",
-      "Consolidated Multi-Category Bill of Quantities",
-      "Strict Quality Control & Factory Pre-Inspections",
-      "Timely Logistics & Multi-Location Staging",
-      "Comprehensive Milestone Documentation & Testing",
-      "Turnkey Deployment with Localized Engineering Support",
-      "Full Statutory & Specification Alignment"
-    ],
-    keyDeliverables: [
-      "Multi-Vertical Tender Fulfillment",
-      "Public Health Infrastructure Packages",
-      "Civic Administration Facility Packages",
-      "Inspection-Ready Pre-Shipment Audits",
-      "Dedicated Project Liaison Management"
-    ],
-    specifications: [
-      { label: "Entity Focus", value: "State, Central & Municipal Bodies" },
-      { label: "Documentation", value: "Full Audit Trail & Specification Sheets" },
-      { label: "Logistics", value: "Nationwide & Remote Site Delivery" },
-      { label: "Quality Assurance", value: "Third-Party & Internal Sign-Offs" }
-    ],
-    representativeVisual: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE GOV PROCUREMENT"
-  },
-  {
-    id: "turnkey-project-solutions",
-    title: "Turnkey Project Solutions",
-    slug: "turnkey-project-solutions",
-    subtitle: "Complete Lifecycle Engineering from Concept to Handover",
-    shortDesc: "One single partner taking unified responsibility: design, engineering, procurement, construction, installation, and final commissioning for complex institutional projects.",
-    fullDesc: "The pinnacle of our business model. Eliminating the friction, delays, and budget leaks of managing dozens of isolated vendors by executing the entire project as a singular, synchronized master contractor.",
-    iconName: "Cpu",
+    id: "fire-safety",
+    title: "Fire & Life Safety Systems",
+    subtitle: "Hydrants, Automatic Sprinklers, Clean Agent Suppression & Addressable Detection",
     category: "infrastructure",
-    badge: "Master Execution",
-    capabilities: [
-      "Unified Program & Project Management (PMO)",
-      "Single-Source Financial & Contractual Accountability",
-      "Synchronized Cross-Sector Engineering Schedules",
-      "Pre-Engineered Systems Integration & Staging",
-      "Risk Mitigation & Single Point of Responsibility",
-      "Rapid Facility Commissioning & Operational Handover",
-      "Post-Handover Warranty & Service Support"
-    ],
-    keyDeliverables: [
-      "Master Project Schedule & Milestone Gantt",
-      "Integrated Multi-Sector Execution Plan",
-      "Zero-Overlap Coordinated Site Deployment",
-      "Complete Room-by-Room Handover Documentation",
-      "Operational Readiness Certification"
-    ],
+    badge: "LIFE SAFETY",
+    tagline: "Integrated NBC-Compliant Fire Protection & High-Sensitivity Detection",
+    overview: "End-to-end design, installation, and statutory commissioning of active and passive fire protection systems. Including internal hydrants, wet riser sprinklers, addressable smoke detection, and FM-200 clean agent gas suppression for data centers and server rooms.",
+    representativeVisual: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Flame",
     specifications: [
-      { label: "Execution Model", value: "Single-Vendor Turnkey Responsibility" },
-      { label: "Scale Scope", value: "Multi-Disciplinary Capital Projects" },
-      { label: "Coordination", value: "100% Internal Division Synchronization" },
-      { label: "Deliverable", value: "Fully Operational Handover" }
+      { label: "Code Compliance", value: "NBC 2016, NFPA 13/72" },
+      { label: "Pumps", value: "UL-Listed / FM-Approved" },
+      { label: "Suppression", value: "Water, Foam & FM-200 Gas" }
     ],
-    representativeVisual: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    ctaText: "EXPLORE TURNKEY SOLUTIONS"
+    capabilities: [
+      "Main Electric, Standby Diesel & Jockey Fire Pump Sets",
+      "Automatic High-Density Sprinkler Piping Networks",
+      "Intelligent Addressable Fire Alarm Panels & Multi-Sensors",
+      "FM-200 / Novec 1230 Clean Agent Gas Flooding",
+      "Fire Rated Steel Doors (2-Hour Integrity) & Dampers"
+    ],
+    procurementItems: [
+      "UL-Listed Fire Pump Skid Assemblies",
+      "Addressable Smoke & Heat Sensor Arrays",
+      "FM-200 Engineered Gas Cylinder Banks",
+      "2-Hour Certified Fire Doors & Panic Bars"
+    ]
+  },
+  {
+    id: "blood-bank",
+    title: "Blood Bank & Cryogenic Cold Chain",
+    subtitle: "Plasma Freezers, Centrifuges, Platelet Agitators & 24/7 Redundant Telemetry",
+    category: "healthcare",
+    badge: "COLD CHAIN",
+    tagline: "Ultra-Low Temperature Biological Storage and Component Separation",
+    overview: "Specialized turnkey blood bank solutions meeting stringent drug authority standards. Supply of -86°C ultra-low freezers, blood bag centrifuges, automated platelet agitators, and continuous IoT cloud temperature loggers.",
+    representativeVisual: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Droplet",
+    specifications: [
+      { label: "Freezer Range", value: "-40°C down to -86°C" },
+      { label: "Redundancy", value: "Dual Compressor Systems" },
+      { label: "Monitoring", value: "Real-Time 24/7 Cloud Alerts" }
+    ],
+    capabilities: [
+      "Automated Refrigerated Blood Bag Centrifuges",
+      "-86°C Ultra-Low Temperature Plasma Freezers",
+      "Platelet Incubators with Constant Agitation Trays",
+      "Blood Collection Monitors & Dielectric Tube Sealers",
+      "Fully Validated Cold Chain Transportation Boxes"
+    ],
+    procurementItems: [
+      "-86°C Cascade Ultra-Low Freezers",
+      "Refrigerated High-Speed Centrifuges",
+      "Flatbed Platelet Agitators with Chamber",
+      "Cold-Chain Data Loggers with GSM Alert"
+    ]
+  },
+  {
+    id: "b2b-furniture",
+    title: "B2B & Institutional Furniture",
+    subtitle: "Hospital Ward Beds, Cleanroom SS Stations & Corporate Executive Desks",
+    category: "commercial",
+    badge: "MODULAR INTERIORS",
+    tagline: "Ergonomic, Heavy-Duty Institutional Furnishings for High-Traffic Environments",
+    overview: "Large-scale supply of high-grade furniture for medical institutions, universities, corporate offices, and government complexes. From motorized ICU patient beds to antimicrobial lab benches and executive boardroom suites.",
+    representativeVisual: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Armchair",
+    specifications: [
+      { label: "Durability", value: "Heavy-Duty Commercial Grade" },
+      { label: "Hygiene", value: "Antimicrobial Seamless Coating" },
+      { label: "Warranty", value: "5-Year Structural Guarantee" }
+    ],
+    capabilities: [
+      "Motorized 5-Function ICU Beds with CPR Release",
+      "Antimicrobial Examination Couches & Patient Screens",
+      "Modular Modular Lab Workbenches & Chemical Storage",
+      "Ergonomic Corporate Workstations & Executive Suites",
+      "Auditorium & Lecture Hall Fixed Seating Systems"
+    ],
+    procurementItems: [
+      "5-Function Motorized ICU Beds",
+      "Stainless Steel 304 Instrument Trolleys",
+      "Acoustic Modular Workstation Clusters",
+      "Heavy-Duty Auditorium Tip-Up Chairs"
+    ]
+  },
+  {
+    id: "tiles-granite-marble",
+    title: "Tiles, Granite & Architectural Stone",
+    subtitle: "Antimicrobial Vinyl, Heavy Vitrified Tiles & Sourced Natural Marble",
+    category: "commercial",
+    badge: "ARCHITECTURAL SURFACES",
+    tagline: "High-Traffic Architectural Flooring, Cleanroom Vinyl and Exterior Cladding",
+    overview: "Direct procurement, cutting, and installation of premium floor and wall surfaces. Specialized anti-static conductive vinyl for surgical suites, heavy vitrified floor tiles for high-traffic public corridors, and imported natural granite/marble for executive facades.",
+    representativeVisual: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+    iconName: "Layers",
+    specifications: [
+      { label: "Conductive Vinyl", value: "10^4 to 10^6 Ohms (OT Safe)" },
+      { label: "Tile Strength", value: "High Breaking Strength Vitrified" },
+      { label: "Surfaces", value: "Italian Marble, Granite, Quartz" }
+    ],
+    capabilities: [
+      "Seamless Copper-Grounded Conductive OT Vinyl Flooring",
+      "Coving Wall-to-Floor Bacteria-Free Transition Profiles",
+      "High-Traffic 800x1600mm Vitrified Glazed Porcelain",
+      "Precision Factory Cut & Polished Granite Countertops",
+      "Dry Cladding Ventilated Natural Stone Facades"
+    ],
+    procurementItems: [
+      "Conductive Homogeneous Vinyl Flooring Rolls",
+      "800x1600mm Polished Vitrified Floor Tiles",
+      "Imported Italian Botticino / Statuario Slabs",
+      "Pre-Cut Jet Black Granite Cladding Slabs"
+    ]
   }
 ];
