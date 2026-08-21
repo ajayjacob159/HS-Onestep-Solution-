@@ -3,23 +3,49 @@ import { ProcurementProduct } from "../types";
 export const PROCUREMENT_CATEGORIES = [
   "All Categories",
   "Medical & Surgical",
+  "IT & AI Automations",
   "Construction & Materials",
   "Institutional Furniture",
   "Fire & Life Safety",
   "Commercial Kitchens",
   "Energy & Power",
   "Architectural Surfaces",
-  "Blood Bank & Cold Chain",
-  "Institutional Equipment"
+  "Blood Bank & Cold Chain"
 ];
 
 export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
+  // IT & AI Automations
+  {
+    id: "it-01",
+    name: "Enterprise Cloud ERP & HMIS Hospital Platform",
+    category: "IT & AI Automations",
+    subCategory: "Software Systems",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    specs: "Multi-tenant cloud architecture, HL7/FHIR compliant, automated EMR, billing, pharmacy and laboratory modules",
+    typicalUnit: "Enterprise License",
+    standards: ["SOC 2 Type II", "HIPAA Ready", "ISO 27001"],
+    leadTimePlaceholder: "Rapid Cloud Deployment",
+    description: "End-to-end digital hospital operating system synchronizing clinical, administrative, and inventory workflows."
+  },
+  {
+    id: "ai-01",
+    name: "AI Robotic Process Automation (RPA) Orchestration Engine",
+    category: "IT & AI Automations",
+    subCategory: "Intelligent Automation",
+    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80",
+    specs: "Autonomous document parsing (IDP), multi-system API integration, 24/7 self-healing execution bots",
+    typicalUnit: "Platform Subscription",
+    standards: ["Enterprise RPA", "Zero-Data-Leakage", "99.9% Uptime"],
+    leadTimePlaceholder: "Immediate Staging",
+    description: "Eliminates manual data entry and repetitive administrative tasks, scaling operations at 10x speed with zero defects."
+  },
   // Medical
   {
     id: "med-01",
     name: "Modular Operation Theatre Workstation",
     category: "Medical & Surgical",
     subCategory: "Surgical Suites",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
     specs: "Class 100 laminar plenum, surgeon touchscreen panel, integrated LED surgical lighting interface",
     typicalUnit: "Per OT Suite",
     standards: ["ISO Class 5", "NABH Ready", "CE Marked"],
@@ -31,6 +57,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "High-Acuity ICU Multi-Parameter Monitor System",
     category: "Medical & Surgical",
     subCategory: "Critical Care",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
     specs: "15-inch capacitive display, ECG, SpO2, NIBP, Dual IBP, EtCO2, centralized telemetry networking",
     typicalUnit: "Units / Bay Sets",
     standards: ["Medical Device Standard", "EMC Tested"],
@@ -42,6 +69,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "Digital Radiography (DR) X-Ray System",
     category: "Medical & Surgical",
     subCategory: "Diagnostic Imaging",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
     specs: "50kW High-frequency generator, wireless flat panel detector, motorized ceiling suspended tube stand",
     typicalUnit: "Complete Suite",
     standards: ["Radiation Safety Compliant", "DICOM 3.0"],
@@ -54,6 +82,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "Institutional Grade Structural Steel & Rebar",
     category: "Construction & Materials",
     subCategory: "Structural Materials",
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80",
     specs: "Fe-550D TMT bars with high ductility and corrosion-resistant alloy formulation",
     typicalUnit: "Metric Tonnes",
     standards: ["IS 1786", "BIS Certified"],
@@ -65,6 +94,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "Cleanroom Modular Wall & Ceiling Panel System",
     category: "Construction & Materials",
     subCategory: "Specialized Interiors",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
     specs: "50mm Progressive HPL / Powder-coated galvanized steel with PIR fire-retardant core",
     typicalUnit: "Square Meters",
     standards: ["Fire Rated", "Antimicrobial"],
@@ -77,6 +107,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "Motorized 5-Function ICU Hospital Bed",
     category: "Institutional Furniture",
     subCategory: "Healthcare Seating & Beds",
+    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80",
     specs: "Electric Trendelenburg, reverse Trendelenburg, cardiac chair position, integrated weighing scale",
     typicalUnit: "Sets / Lot",
     standards: ["IEC 60601-2-52", "CE"],
@@ -88,6 +119,7 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     name: "High-Density Modular Corporate Workstation Grid",
     category: "Institutional Furniture",
     subCategory: "Commercial Office",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
     specs: "Powder-coated steel understructure, acoustic felt screens, integrated wire raceways",
     typicalUnit: "100+ Seater Clusters",
     standards: ["BIFMA X5.5", "GreenGuard"],
@@ -99,93 +131,64 @@ export const PROCUREMENT_PRODUCTS: ProcurementProduct[] = [
     id: "fire-01",
     name: "Addressable Multi-Loop Fire Detection Hub",
     category: "Fire & Life Safety",
-    subCategory: "Detection & Alarms",
-    specs: "4 to 8 Loop networkable panel, 250 devices per loop, color graphic LCD, BMS Modbus gateway",
-    typicalUnit: "Panel & System Kit",
-    standards: ["UL Listed", "FM Approved", "EN54"],
-    leadTimePlaceholder: "Project Staging",
-    description: "Intelligent life-safety management system supporting multi-floor zoning and automated suppression trigger."
+    subCategory: "Active Fire Alarms",
+    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80",
+    specs: "8-Loop intelligent addressable panel, optical smoke sensors, multi-criteria thermal detectors",
+    typicalUnit: "Networked System",
+    standards: ["EN54-2/4", "UL-Listed"],
+    leadTimePlaceholder: "Direct Procurement",
+    description: "Comprehensive facility fire safety monitoring with pinpoint loop localization and automatic suppression trigger."
   },
-  {
-    id: "fire-02",
-    name: "Clean Agent Total Flooding Suppression System",
-    category: "Fire & Life Safety",
-    subCategory: "Gas Suppression",
-    specs: "FM-200 / Novec 1230 agent cylinders, electric/pneumatic actuator valves, discharge nozzles",
-    typicalUnit: "Room Protected System",
-    standards: ["NFPA 2001", "UL/FM"],
-    leadTimePlaceholder: "Project Staging",
-    description: "Zero-residue gaseous extinguishing system for hospital data centers, electrical rooms, and OT suites."
-  },
-  // Commercial Kitchen
+  // Kitchens
   {
     id: "kit-01",
-    name: "Commercial Heavy-Duty Combi-Steamer Oven",
+    name: "Commercial SS 304 High-Volume Induction Range",
     category: "Commercial Kitchens",
-    subCategory: "Cooking & Thermal",
-    specs: "20-Pan GN 1/1 capacity, automated boiler injection, touchscreen multi-cook recipes",
-    typicalUnit: "Unit / Commercial Skid",
-    standards: ["NSF Food Grade", "CE"],
-    leadTimePlaceholder: "Staged Delivery",
-    description: "High-volume programmable steam and convection oven for institutional cafeterias and hospital dietary wings."
-  },
-  {
-    id: "kit-02",
-    name: "Walk-In Modular Cold Storage & Freezer Rooms",
-    category: "Commercial Kitchens",
-    subCategory: "Refrigeration",
-    specs: "100mm PUF panels, hermetic compressor skid, digital micro-controller, heated door gaskets",
-    typicalUnit: "Custom Room Dimensions",
-    standards: ["HACCP Compliant", "Energy Star"],
-    leadTimePlaceholder: "Site Assembly Staging",
-    description: "Heavy-duty commercial cold preservation facilities with dual condensing units for zero-downtime food security."
+    subCategory: "Cooking Equipment",
+    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80",
+    specs: "Heavy-duty food grade AISI 304 construction, 5kW per zone high-efficiency induction generators",
+    typicalUnit: "Units",
+    standards: ["NSF Standard", "CE"],
+    leadTimePlaceholder: "Fabrication Staging",
+    description: "Energy-efficient institutional cooking block designed for continuous commercial kitchen operations."
   },
   // Energy
   {
-    id: "eng-01",
-    name: "Institutional HT/LT Power Distribution Substation",
+    id: "pwr-01",
+    name: "Redundant Modular Medical Grade Online UPS",
     category: "Energy & Power",
-    subCategory: "Electrical Distribution",
-    specs: "Dry-type Cast Resin Transformer (1000 kVA), Air Circuit Breakers (ACB), PLC-based auto synchronizing",
-    typicalUnit: "Substation Package",
-    standards: ["IEC 61439", "IS Standards"],
-    leadTimePlaceholder: "Custom Engineered Staging",
-    description: "High-reliability electrical distribution switchgear engineered for zero-failure continuous hospital loads."
+    subCategory: "Critical Power",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    specs: "True online double conversion, N+1 power module redundancy, zero millisecond transfer switch",
+    typicalUnit: "kVA Configurations",
+    standards: ["IEC 62040-3", "Class 1 Uptime"],
+    leadTimePlaceholder: "Staged Deployment",
+    description: "Clean uninterruptible power supply for operation theatres, ICUs, and critical data infrastructure."
   },
   // Surfaces
   {
     id: "surf-01",
-    name: "Hospital-Grade Antimicrobial Vitrified Flooring",
+    name: "Antimicrobial Conductive Homogeneous OT Vinyl",
     category: "Architectural Surfaces",
-    subCategory: "Commercial Stone & Tile",
-    specs: "600x1200mm / 800x1600mm Full-body vitrified porcelain with anti-slip and stain-resistant glaze",
-    typicalUnit: "Square Feet / Metric Pallets",
-    standards: ["ISO 13006", "Antibacterial Certified"],
-    leadTimePlaceholder: "Bulk Container Logistics",
-    description: "Heavy-traffic architectural stone and porcelain tiles engineered for high chemical and abrasion resistance."
+    subCategory: "Healthcare Flooring",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    specs: "2.0mm thickness, electrical resistance 10^4 - 10^6 ohms, hot-welded seamless joint installation",
+    typicalUnit: "Rolls / Sq. Meters",
+    standards: ["EN 1081", "Cleanroom Class A"],
+    leadTimePlaceholder: "Direct Procurement",
+    description: "Static-dissipative vinyl flooring providing infection control and electrostatic protection in surgical environments."
   },
-  // Blood Bank
+  // Cold Chain
   {
-    id: "bb-01",
-    name: "Ultra-Low Temperature Plasma Storage Freezer (-86°C)",
+    id: "cold-01",
+    name: "Ultra-Low Temperature Plasma Storage Freezer",
     category: "Blood Bank & Cold Chain",
-    subCategory: "Cold Chain Preservation",
-    specs: "700L capacity, dual cascade compressors, VIP vacuum insulation panels, 72-hour battery backup logger",
-    typicalUnit: "Units / Laboratory Sets",
-    standards: ["Medical Cold-Chain Approved", "DIN 58375"],
-    leadTimePlaceholder: "Specialized Staging",
-    description: "Critical cryogenic preservation freezer with automated hot-gas defrost and remote cloud temperature alerts."
-  },
-  // Institutional Equipment
-  {
-    id: "inst-01",
-    name: "Integrated Campus IP-CCTV & Telemetry Hub",
-    category: "Institutional Equipment",
-    subCategory: "Security & Automation",
-    specs: "4K AI analytics cameras, centralized enterprise NVR array with 90-day RAID6 redundancy",
-    typicalUnit: "Turnkey Campus Package",
-    standards: ["ONVIF Profile S/G/T", "UL"],
-    leadTimePlaceholder: "Project Staging",
-    description: "Enterprise surveillance and access control network for sprawling government, educational, and medical campuses."
+    subCategory: "Biological Cold Chain",
+    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
+    specs: "-86°C capability, dual cascade refrigeration compressors, automated IoT temperature telemetry logger",
+    typicalUnit: "Units",
+    standards: ["ISO 13485", "CE Medical"],
+    leadTimePlaceholder: "Standard Project Staging",
+    description: "Validated biological cold storage for blood components, vaccines, and high-value pharmaceuticals."
   }
 ];
