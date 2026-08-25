@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#008744] flex-shrink-0" />
-                <span>rfq@hsonestep.com</span>
+                <span>info@hsonestepsolutions.com</span>
               </div>
             </div>
 

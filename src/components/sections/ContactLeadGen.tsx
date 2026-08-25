@@ -38,7 +38,7 @@ export const ContactLeadGen: React.FC = () => {
             <div className="space-y-4 pt-4 border-t border-slate-100 text-xs font-mono text-slate-600">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#008744]" />
-                <span>rfq@hsonestep.com • info@hsonestep.com</span>
+                <span>info@hsonestepsolutions.com • rfq@hsonestepsolutions.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#008744]" />
