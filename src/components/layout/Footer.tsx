@@ -63,6 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
               <li><a href="#procurement" className="hover:text-[#008744] transition-colors">B2B Procurement Catalog</a></li>
               <li><a href="#dashboard-concept" className="hover:text-[#008744] transition-colors">Project Telemetry (Demo)</a></li>
               <li><a href="#one-step-model" className="hover:text-[#008744] transition-colors">The 8-Stage Process</a></li>
+              <li><a href="#founder" className="hover:text-[#008744] transition-colors font-semibold text-slate-900">Mr. Pratyaksh Pandey (Founder & CEO)</a></li>
               <li><a href="#about" className="hover:text-[#008744] transition-colors">About Corporate Mission</a></li>
             </ul>
           </div>

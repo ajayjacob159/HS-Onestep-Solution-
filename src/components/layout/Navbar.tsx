@@ -88,6 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
           </a>
           <a href="#one-step-model" className="hover:text-[#008744] transition-colors">The Process</a>
           <a href="#procurement" className="hover:text-[#008744] transition-colors">Procurement</a>
+          <a href="#founder" className="hover:text-[#008744] transition-colors">Founder & Leadership</a>
           <a href="#about" className="hover:text-[#008744] transition-colors">About Us</a>
           <a href="#contact" className="hover:text-[#008744] transition-colors">Contact</a>
         </nav>
@@ -122,6 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
           <a href="#floorplan" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-[#008744] py-1">Interactive CAD Floorplan</a>
           <a href="#one-step-model" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold text-slate-800 hover:text-[#008744] py-1">The One Step Model</a>
           <a href="#procurement" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold text-slate-800 hover:text-[#008744] py-1">Procurement Catalog</a>
+          <a href="#founder" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold text-[#008744] font-bold py-1">Founder & Leadership</a>
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold text-slate-800 hover:text-[#008744] py-1">About Us</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold text-slate-800 hover:text-[#008744] py-1">Contact Desk</a>
 

@@ -8,6 +8,7 @@ import { HeroExperience } from "./components/hero/HeroExperience";
 import { PictorialMarquee } from "./components/sections/PictorialMarquee";
 import { InteractiveProjectRoadmap } from "./components/sections/InteractiveProjectRoadmap";
 import { CorporateCampusShowcase } from "./components/sections/CorporateCampusShowcase";
+import { FounderSection } from "./components/sections/FounderSection";
 import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
 import { TechIntelligence } from "./components/sections/TechIntelligence";
 import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
@@ -91,6 +92,11 @@ export const App: React.FC = () => {
         {/* Interactive Turnkey Project Execution Roadmap */}
         <InteractiveProjectRoadmap
           onOpenRFQ={handleOpenRFQ}
+        />
+
+        {/* Executive Leadership: Mr. Pratyaksh Pandey (Founder & CEO) */}
+        <FounderSection
+          onOpenRFQ={() => handleOpenRFQ()}
         />
 
         {/* IT Technology, Software & AI Automations Engine */}
