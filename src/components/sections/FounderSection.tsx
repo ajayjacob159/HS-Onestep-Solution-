@@ -1,6 +1,53 @@
 import React from "react";
-import { ShieldCheck, Award, HeartHandshake, Building2, CheckCircle2, ArrowRight, Quote } from "lucide-react";
+import { 
+  ShieldCheck, 
+  Award, 
+  HeartHandshake, 
+  Building2, 
+  CheckCircle2, 
+  ArrowRight, 
+  Quote,
+  Activity,
+  Briefcase,
+  Landmark,
+  Target,
+  Users,
+  Globe2
+} from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
+
+const CORE_EXPERTISE = [
+  {
+    title: "Healthcare Project Management",
+    desc: "Turnkey planning, medical equipment staging & NABH infrastructure execution.",
+    icon: Activity
+  },
+  {
+    title: "CSR Implementation",
+    desc: "High-impact corporate social responsibility programs with measurable social ROI.",
+    icon: HeartHandshake
+  },
+  {
+    title: "NHM & Public Health Programs",
+    desc: "National Health Mission projects, district health network modernization & cold-chain.",
+    icon: Landmark
+  },
+  {
+    title: "NGO & Foundation Collaborations",
+    desc: "Large-scale philanthropic partnerships delivering grassroots health interventions.",
+    icon: Users
+  },
+  {
+    title: "Government Liaisoning",
+    desc: "Bridging the gap between institutional policy frameworks and on-ground deployment.",
+    icon: Briefcase
+  },
+  {
+    title: "Social Impact Strategy",
+    desc: "Sustainable, equitable healthcare models designed for long-term community wellness.",
+    icon: Target
+  }
+];
 
 interface FounderSectionProps {
   onOpenRFQ?: () => void;
@@ -26,14 +73,14 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             LEADERSHIP BEHIND THE MISSION
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Over a decade of cross-sectoral execution transforming India’s healthcare and institutional infrastructure.
+            Over a decade of cross-sectoral execution transforming India’s healthcare and institutional landscape.
           </p>
         </div>
 
         {/* Main 2-Column Executive Card */}
         <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             {/* Left: Founder Portrait & Verified Credentials Plaque */}
             <div className="lg:col-span-5 flex flex-col items-center">
@@ -74,7 +121,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
 
             </div>
 
-            {/* Right: Executive Narrative & Impact Portfolio */}
+            {/* Right: Executive Narrative & Core Expertise Portfolio */}
             <div className="lg:col-span-7 space-y-6">
               
               <div>
@@ -104,51 +151,43 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                 </p>
               </div>
 
-              {/* 4 Strategic Impact Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold flex-shrink-0 border border-emerald-200">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">National Health Mission [NHM]</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">Critical government healthcare implementation.</p>
-                  </div>
+              {/* Dedicated Core Expertise Grid */}
+              <div className="pt-2">
+                <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
+                  <span className="text-xs font-mono text-slate-900 font-extrabold uppercase tracking-wider flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-[#008744]" />
+                    <span>CORE EXPERTISE & COMPETENCIES</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-[#D4AF37] font-bold">CROSS-SECTORAL</span>
                 </div>
 
-                <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-xl bg-amber-50 text-[#D4AF37] flex items-center justify-center font-bold flex-shrink-0 border border-amber-200">
-                    <HeartHandshake className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Corporate CSR Partnerships</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">High-impact sustainable healthcare initiatives.</p>
-                  </div>
-                </div>
-
-                <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center font-bold flex-shrink-0 border border-slate-200">
-                    <Building2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">NGO & Foundation Programs</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">Large-scale on-ground social impact delivery.</p>
-                  </div>
-                </div>
-
-                <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-start space-x-3 shadow-sm">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold flex-shrink-0 border border-emerald-200">
-                    <Award className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-900">Policy-to-Implementation</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">Seamless single-point turnkey execution.</p>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {CORE_EXPERTISE.map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <div 
+                        key={idx} 
+                        className="p-3.5 bg-white border border-slate-200 hover:border-[#008744] rounded-2xl flex items-start space-x-3 shadow-sm hover:shadow-md transition-all group"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] group-hover:bg-[#008744] group-hover:text-white flex items-center justify-center font-bold flex-shrink-0 border border-emerald-200 transition-colors">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-bold text-slate-900 group-hover:text-[#008744] transition-colors leading-tight">
+                            {item.title}
+                          </h4>
+                          <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* Quote Box & Consultation CTA */}
-              <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-slate-200">
+              <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-slate-200">
                 <div className="flex items-center space-x-2 text-xs font-mono text-slate-500">
                   <Quote className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
                   <span className="italic">“YOUR PLANS, OUR GOALS”</span>
@@ -160,7 +199,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                       triggerHaptic(20);
                       onOpenRFQ();
                     }}
-                    className="px-6 py-3 bg-gradient-to-r from-[#008744] to-[#065F38] hover:from-[#065F38] hover:to-[#008744] text-white font-bold rounded-xl text-xs font-mono tracking-wider shadow-md shadow-emerald-700/20 transition-all flex items-center space-x-2"
+                    className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#008744] to-[#065F38] hover:from-[#065F38] hover:to-[#008744] text-white font-bold rounded-xl text-xs font-mono tracking-wider shadow-md shadow-emerald-700/20 transition-all flex items-center justify-center space-x-2"
                   >
                     <span>INITIATE EXECUTIVE CONSULTATION</span>
                     <ArrowRight className="w-4 h-4" />
