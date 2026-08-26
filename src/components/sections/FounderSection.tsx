@@ -26,7 +26,7 @@ const CORE_EXPERTISE = [
   },
   {
     title: "On-Time Commitment Delivery",
-    desc: "Mobilizing diverse resources and completing project commitments strictly within stipulated timelines.",
+    desc: "Mobilizing diverse resources and completing project commitments strictly within the stipulated timeline.",
     icon: Clock
   },
   {
@@ -46,7 +46,7 @@ const CORE_EXPERTISE = [
   },
   {
     title: "Client Trust & Quality Assurance",
-    desc: "Uncompromising focus on quality and client satisfaction, fostering long-term mutual relationships.",
+    desc: "Strong focus on quality and client satisfaction, building long-term, trusted relationships.",
     icon: ThumbsUp
   }
 ];
@@ -123,7 +123,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
 
             </div>
 
-            {/* Right: Executive Narrative & Core Expertise Portfolio */}
+            {/* Right: Executive Narrative & Core Strengths Portfolio */}
             <div className="lg:col-span-7 space-y-6">
               
               <div>
@@ -138,18 +138,14 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                 </p>
               </div>
 
-              {/* Official Rewritten Executive Narrative */}
+              {/* Official Exact Statements Only */}
               <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
                 <p>
-                  <strong>Mr. Pratyaksh Pandey</strong> is the Founder and CEO of <strong>HS ONE STEP SOLUTIONS</strong>, a dynamic organization backed by <strong>over 10 years of diversified experience</strong> across the private, public, and government sectors. With a strong commitment to delivering end-to-end solutions, he has successfully brought together a vast network of multiple vendors and specialized service providers under one unified organization to ensure seamless project execution.
+                  Mr. Pratyaksh Pandey is the Founder and CEO of HS ONE STEP SOLUTIONS, a dynamic organization backed by over 10 years of diversified experience across the private, public, and government sectors. With a strong commitment to delivering end-to-end solutions, he has successfully brought together a network of multiple vendors and service providers under one organization to ensure seamless project execution.
                 </p>
 
                 <p>
-                  The company’s key strength lies in its proven ability to coordinate diverse resources and complete commitments strictly within the stipulated timeline. This integrated approach, combined with a strong focus on engineering quality and client satisfaction, has earned continuous appreciation from its clientele. These successful engagements have helped build long-term, trusted, and mutually beneficial relationships with leading corporates, government bodies, NGOs, and foundations.
-                </p>
-
-                <p className="text-slate-600 text-sm">
-                  With a deep-rooted dedication to transforming healthcare and institutional infrastructure, Mr. Pandey has led high-impact <strong>Corporate CSR initiatives</strong>, <strong>National Health Mission [NHM]</strong> projects, and large-scale Foundation programs. His cross-sectoral expertise and strategic vision enable the organization to bridge the gap between policy and implementation, delivering sustainable on-ground solutions that create real social impact.
+                  The company’s key strength lies in its ability to coordinate diverse resources and complete commitments within the stipulated timeline. This integrated approach, combined with a strong focus on quality and client satisfaction, has earned continuous appreciation from its clientele. These successful engagements have helped build long-term, trusted, and mutually beneficial relationships with clients.
                 </p>
               </div>
 
