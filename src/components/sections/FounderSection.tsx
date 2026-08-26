@@ -12,40 +12,42 @@ import {
   Landmark,
   Target,
   Users,
-  Globe2
+  Layers,
+  Clock,
+  ThumbsUp
 } from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
 
 const CORE_EXPERTISE = [
   {
-    title: "Healthcare Project Management",
-    desc: "Turnkey planning, medical equipment staging & NABH infrastructure execution.",
+    title: "Unified Vendor & Resource Network",
+    desc: "Brought together multiple vendors & service providers under one organization for seamless execution.",
+    icon: Layers
+  },
+  {
+    title: "On-Time Commitment Delivery",
+    desc: "Mobilizing diverse resources and completing project commitments strictly within stipulated timelines.",
+    icon: Clock
+  },
+  {
+    title: "Healthcare & Turnkey Projects",
+    desc: "End-to-end hospital infrastructure, medical equipment staging & NABH-ready execution.",
     icon: Activity
   },
   {
-    title: "CSR Implementation",
-    desc: "High-impact corporate social responsibility programs with measurable social ROI.",
+    title: "CSR & Foundation Partnerships",
+    desc: "High-impact CSR initiatives and large-scale NGO programs delivering measurable social impact.",
     icon: HeartHandshake
   },
   {
     title: "NHM & Public Health Programs",
-    desc: "National Health Mission projects, district health network modernization & cold-chain.",
+    desc: "National Health Mission projects, district medical cold-chains & public health modernization.",
     icon: Landmark
   },
   {
-    title: "NGO & Foundation Collaborations",
-    desc: "Large-scale philanthropic partnerships delivering grassroots health interventions.",
-    icon: Users
-  },
-  {
-    title: "Government Liaisoning",
-    desc: "Bridging the gap between institutional policy frameworks and on-ground deployment.",
-    icon: Briefcase
-  },
-  {
-    title: "Social Impact Strategy",
-    desc: "Sustainable, equitable healthcare models designed for long-term community wellness.",
-    icon: Target
+    title: "Client Trust & Quality Assurance",
+    desc: "Uncompromising focus on quality and client satisfaction, fostering long-term mutual relationships.",
+    icon: ThumbsUp
   }
 ];
 
@@ -136,29 +138,29 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                 </p>
               </div>
 
-              {/* Core Narrative Paragraphs */}
+              {/* Official Rewritten Executive Narrative */}
               <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
                 <p>
-                  <strong>Mr. Pratyaksh Pandey</strong> is the Founder and CEO of <strong>HS ONE STEP SOLUTIONS</strong>, a dynamic organization with over <strong>10 years of diversified experience</strong> across the private, public, and government sectors.
+                  <strong>Mr. Pratyaksh Pandey</strong> is the Founder and CEO of <strong>HS ONE STEP SOLUTIONS</strong>, a dynamic organization backed by <strong>over 10 years of diversified experience</strong> across the private, public, and government sectors. With a strong commitment to delivering end-to-end solutions, he has successfully brought together a vast network of multiple vendors and specialized service providers under one unified organization to ensure seamless project execution.
                 </p>
 
                 <p>
-                  With a deep-rooted commitment to transforming India’s healthcare landscape, he has led the company to successfully collaborate with leading corporates, government bodies, NGOs, and foundations. Under his leadership, HS ONE STEP SOLUTIONS has made significant contributions to the healthcare industry through high-impact <strong>CSR initiatives</strong>, <strong>National Health Mission [NHM]</strong> projects, and large-scale NGO and Foundation programs.
+                  The company’s key strength lies in its proven ability to coordinate diverse resources and complete commitments strictly within the stipulated timeline. This integrated approach, combined with a strong focus on engineering quality and client satisfaction, has earned continuous appreciation from its clientele. These successful engagements have helped build long-term, trusted, and mutually beneficial relationships with leading corporates, government bodies, NGOs, and foundations.
                 </p>
 
                 <p className="text-slate-600 text-sm">
-                  His cross-sectoral expertise and strategic vision have enabled the organization to bridge the gap between policy and implementation, delivering sustainable, on-ground healthcare solutions that create real social impact. Driven by innovation, integrity, and a one-step solution approach, Mr. Pandey continues to steer the company towards building a healthier and more equitable future.
+                  With a deep-rooted dedication to transforming healthcare and institutional infrastructure, Mr. Pandey has led high-impact <strong>Corporate CSR initiatives</strong>, <strong>National Health Mission [NHM]</strong> projects, and large-scale Foundation programs. His cross-sectoral expertise and strategic vision enable the organization to bridge the gap between policy and implementation, delivering sustainable on-ground solutions that create real social impact.
                 </p>
               </div>
 
-              {/* Dedicated Core Expertise Grid */}
+              {/* Dedicated Core Expertise & Strength Grid */}
               <div className="pt-2">
                 <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
                   <span className="text-xs font-mono text-slate-900 font-extrabold uppercase tracking-wider flex items-center space-x-2">
                     <span className="w-2 h-2 rounded-full bg-[#008744]" />
-                    <span>CORE EXPERTISE & COMPETENCIES</span>
+                    <span>CORE STRENGTHS & COMPETENCIES</span>
                   </span>
-                  <span className="text-[10px] font-mono text-[#D4AF37] font-bold">CROSS-SECTORAL</span>
+                  <span className="text-[10px] font-mono text-[#D4AF37] font-bold">END-TO-END EXECUTION</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
