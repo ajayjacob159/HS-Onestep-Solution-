@@ -141,7 +141,10 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
               {/* Official Exact Statements Only */}
               <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
                 <p>
-                  Mr. Pratyaksh Pandey is the Founder and CEO of HS ONE STEP SOLUTIONS, a dynamic organization backed by over 10 years of diversified experience across the private, public, and government sectors. With a strong commitment to delivering end-to-end solutions, he has successfully brought together a network of multiple vendors and service providers under one organization to ensure seamless project execution.
+                  <span className="font-extrabold text-slate-900 bg-emerald-50 border border-emerald-200 text-[#008744] px-2.5 py-1 rounded-xl inline-block shadow-sm mr-1.5 mb-1.5 sm:mb-0">
+                    Mr. Pratyaksh Pandey is the Founder and CEO of HS ONE STEP SOLUTIONS
+                  </span>
+                  , a dynamic organization backed by over 10 years of diversified experience across the private, public, and government sectors. With a strong commitment to delivering end-to-end solutions, he has successfully brought together a network of multiple vendors and service providers under one organization to ensure seamless project execution.
                 </p>
 
                 <p>
