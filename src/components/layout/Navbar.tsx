@@ -16,7 +16,8 @@ import {
   Clock,
   Package,
   Activity,
-  Images
+  Images,
+  User
 } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
 import { triggerHaptic } from "../../utils/haptics";
@@ -29,9 +30,9 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [platformsOpen, setPlatformsOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -45,9 +46,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
   // Close menus when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
+    setAboutOpen(false);
     setSolutionsOpen(false);
     setPlatformsOpen(false);
-    setAboutOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -72,10 +73,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
           />
         </Link>
 
-        {/* Clean, Neat Desktop Navigation */}
+        {/* Clean, Ordered Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8 text-[13px] font-bold text-slate-700 tracking-wide">
           
-          {/* 1. Home */}
+          {/* 1. Home (FIRST) */}
           <Link 
             to="/" 
             className={`hover:text-[#008744] transition-colors ${location.pathname === "/" ? "text-[#008744] font-extrabold" : ""}`}
@@ -84,7 +85,71 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             Home
           </Link>
 
-          {/* 2. Solutions Mega Dropdown */}
+          {/* 2. About Us (NEXT - Company Profile FIRST, Founder Profile SECOND) */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setAboutOpen(true)}
+            onMouseLeave={() => setAboutOpen(false)}
+          >
+            <button className="flex items-center space-x-1.5 hover:text-[#008744] transition-colors py-2">
+              <span>About Us</span>
+              <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${aboutOpen ? "rotate-180 text-[#008744]" : ""}`} />
+            </button>
+
+            {aboutOpen && (
+              <div className="absolute top-full left-0 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+                {/* 1. About Company (FIRST) */}
+                <a
+                  href="/#about"
+                  onClick={() => {
+                    triggerHaptic(10);
+                    setAboutOpen(false);
+                  }}
+                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
+                >
+                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-2">
+                    <Building2 className="w-4 h-4 text-[#008744]" />
+                    <span>Company Profile</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">HS ONE STEP Overview & Track Record</div>
+                </a>
+
+                {/* 2. Founder Profile (SECOND) */}
+                <a
+                  href="/#founder"
+                  onClick={() => {
+                    triggerHaptic(10);
+                    setAboutOpen(false);
+                  }}
+                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
+                >
+                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-2">
+                    <Award className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Founder Profile</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">Mr. Pratyaksh Pandey (Founder & CEO)</div>
+                </a>
+
+                {/* 3. Institutional Contact */}
+                <a
+                  href="/#contact"
+                  onClick={() => {
+                    triggerHaptic(10);
+                    setAboutOpen(false);
+                  }}
+                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
+                >
+                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-2">
+                    <Phone className="w-4 h-4 text-[#008744]" />
+                    <span>Institutional Contact</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">info@hsonestepsolutions.com</div>
+                </a>
+              </div>
+            )}
+          </div>
+
+          {/* 3. Sectors & Solutions */}
           <div 
             className="relative"
             onMouseEnter={() => setSolutionsOpen(true)}
@@ -126,16 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             )}
           </div>
 
-          {/* Gallery Link */}
-          <Link 
-            to="/gallery" 
-            className={`hover:text-[#008744] transition-colors ${location.pathname === "/gallery" ? "text-[#008744] font-extrabold" : ""}`}
-            onClick={() => triggerHaptic(10)}
-          >
-            Gallery
-          </Link>
-
-          {/* 3. Specialized Dedicated Platforms Dropdown */}
+          {/* 4. Specialized Dedicated Platforms Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => setPlatformsOpen(true)}
@@ -199,63 +255,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             )}
           </div>
 
-          {/* 4. About Us Dropdown */}
-          <div 
-            className="relative"
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
+          {/* 5. Gallery (IN LAST BEFORE CTA) */}
+          <Link 
+            to="/gallery" 
+            className={`hover:text-[#008744] transition-colors ${location.pathname === "/gallery" ? "text-[#008744] font-extrabold" : ""}`}
+            onClick={() => triggerHaptic(10)}
           >
-            <button className="flex items-center space-x-1.5 hover:text-[#008744] transition-colors py-2">
-              <span>About Us</span>
-              <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${aboutOpen ? "rotate-180 text-[#008744]" : ""}`} />
-            </button>
+            Gallery
+          </Link>
 
-            {aboutOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                <a
-                  href="/#founder"
-                  onClick={() => {
-                    triggerHaptic(10);
-                    setAboutOpen(false);
-                  }}
-                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
-                >
-                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-1.5">
-                    <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
-                    <span>Founder & CEO</span>
-                  </div>
-                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">Mr. Pratyaksh Pandey</div>
-                </a>
-
-                <a
-                  href="/#about"
-                  onClick={() => {
-                    triggerHaptic(10);
-                    setAboutOpen(false);
-                  }}
-                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
-                >
-                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-1.5">
-                    <Building2 className="w-3.5 h-3.5 text-[#008744]" />
-                    <span>Company Profile</span>
-                  </div>
-                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">HS ONE STEP Overview</div>
-                </a>
-
-                <a
-                  href="/#contact"
-                  onClick={() => {
-                    triggerHaptic(10);
-                    setAboutOpen(false);
-                  }}
-                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
-                >
-                  <div className="font-bold text-slate-900 hover:text-[#008744]">Institutional Contact</div>
-                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">info@hsonestepsolutions.com</div>
-                </a>
-              </div>
-            )}
-          </div>
         </nav>
 
         {/* Action Button & Contact Link */}
@@ -297,6 +305,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
           <div className="space-y-2 text-sm font-semibold text-slate-800">
             <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">Home</Link>
             
+            <div className="pt-2 pb-1 text-[11px] font-mono font-bold text-slate-400 uppercase">About Us</div>
+            <a href="/#about" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744] flex items-center space-x-2">
+              <Building2 className="w-4 h-4 text-[#008744]" />
+              <span>Company Profile</span>
+            </a>
+            <a href="/#founder" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold flex items-center space-x-2">
+              <Award className="w-4 h-4 text-[#D4AF37]" />
+              <span>Founder Profile (Mr. Pratyaksh Pandey)</span>
+            </a>
+            <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744] flex items-center space-x-2">
+              <Phone className="w-4 h-4 text-[#008744]" />
+              <span>Institutional Contact</span>
+            </a>
+
             <div className="pt-2 pb-1 text-[11px] font-mono font-bold text-slate-400 uppercase">Dedicated Platforms</div>
             <Link to="/hospital-development" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-800 hover:text-[#008744] flex items-center space-x-2">
               <Activity className="w-4 h-4 text-[#008744]" />
@@ -314,15 +336,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
               <Package className="w-4 h-4 text-slate-700" />
               <span>B2B Procurement Catalog</span>
             </Link>
+
+            <div className="pt-2 pb-1 text-[11px] font-mono font-bold text-slate-400 uppercase">Gallery</div>
             <Link to="/gallery" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold flex items-center space-x-2">
               <Images className="w-4 h-4 text-[#008744]" />
               <span>Project & Facility Gallery</span>
             </Link>
-
-            <div className="pt-2 pb-1 text-[11px] font-mono font-bold text-slate-400 uppercase">About & Contact</div>
-            <a href="/#founder" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold">Mr. Pratyaksh Pandey (Founder & CEO)</a>
-            <a href="/#about" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">Company Profile</a>
-            <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">Contact Desk</a>
           </div>
 
           <div className="pt-4 border-t border-slate-100 space-y-2">
