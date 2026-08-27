@@ -12,6 +12,7 @@ import { HospitalDevelopmentPage } from "./pages/HospitalDevelopmentPage";
 import { CadFloorplanPage } from "./pages/CadFloorplanPage";
 import { ExecutionHighwayPage } from "./pages/ExecutionHighwayPage";
 import { ProcurementPage } from "./pages/ProcurementPage";
+import { GalleryPage } from "./pages/GalleryPage";
 
 import { triggerHaptic } from "./utils/haptics";
 
@@ -117,6 +118,16 @@ export const App: React.FC = () => {
               path="/procurement"
               element={
                 <ProcurementPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 6. Standalone Project & Facility Gallery Page */}
+            <Route
+              path="/gallery"
+              element={
+                <GalleryPage
                   onOpenRFQ={handleOpenRFQ}
                 />
               }

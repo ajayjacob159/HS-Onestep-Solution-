@@ -15,7 +15,8 @@ import {
   Mail,
   Clock,
   Package,
-  Activity
+  Activity,
+  Images
 } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
 import { triggerHaptic } from "../../utils/haptics";
@@ -124,6 +125,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
               </div>
             )}
           </div>
+
+          {/* Gallery Link */}
+          <Link 
+            to="/gallery" 
+            className={`hover:text-[#008744] transition-colors ${location.pathname === "/gallery" ? "text-[#008744] font-extrabold" : ""}`}
+            onClick={() => triggerHaptic(10)}
+          >
+            Gallery
+          </Link>
 
           {/* 3. Specialized Dedicated Platforms Dropdown */}
           <div 
@@ -303,6 +313,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             <Link to="/procurement" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-800 hover:text-[#008744] flex items-center space-x-2">
               <Package className="w-4 h-4 text-slate-700" />
               <span>B2B Procurement Catalog</span>
+            </Link>
+            <Link to="/gallery" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold flex items-center space-x-2">
+              <Images className="w-4 h-4 text-[#008744]" />
+              <span>Project & Facility Gallery</span>
             </Link>
 
             <div className="pt-2 pb-1 text-[11px] font-mono font-bold text-slate-400 uppercase">About & Contact</div>
