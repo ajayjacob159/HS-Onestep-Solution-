@@ -146,14 +146,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             Procurement
           </a>
 
-          {/* 6. Company & Leadership Dropdown */}
+          {/* 6. About Us Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => setCompanyOpen(true)}
             onMouseLeave={() => setCompanyOpen(false)}
           >
             <button className="flex items-center space-x-1.5 hover:text-[#008744] transition-colors py-2">
-              <span>Company</span>
+              <span>About Us</span>
               <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${companyOpen ? "rotate-180 text-[#008744]" : ""}`} />
             </button>
 
@@ -182,8 +182,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
                   }}
                   className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
                 >
-                  <div className="font-bold text-slate-900 hover:text-[#008744]">About Us</div>
-                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">Established 2024 Profile</div>
+                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Company Profile</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">HS ONE STEP Overview</div>
                 </a>
 
                 <a
