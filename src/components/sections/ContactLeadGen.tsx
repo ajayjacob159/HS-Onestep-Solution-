@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Send, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, MapPin, Building2 } from "lucide-react";
+import { Send, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, MapPin, Building2, Loader2 } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
+import { submitInquiryToEmail } from "../../utils/formSubmit";
+import { triggerHaptic } from "../../utils/haptics";
 
 export const ContactLeadGen: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     organization: "",
@@ -13,9 +16,16 @@ export const ContactLeadGen: React.FC = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    triggerHaptic(15);
+    setIsSubmitting(true);
+
+    await submitInquiryToEmail("CONTACT_FORM", formData);
+
+    setIsSubmitting(false);
     setSubmitted(true);
+    triggerHaptic(30);
   };
 
   return (
@@ -32,7 +42,7 @@ export const ContactLeadGen: React.FC = () => {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Connect with our master project execution desk to review your tender documents, engineering BOQs, or custom facility development scope.
+              Connect with our master project execution desk to review your tender documents, engineering BOQs, or custom facility development scope. All messages are directly routed to <strong>info@hsonestepsolutions.com</strong>.
             </p>
 
             <div className="space-y-4 pt-4 border-t border-slate-100 text-xs font-mono text-slate-600">
@@ -55,13 +65,13 @@ export const ContactLeadGen: React.FC = () => {
             {submitted ? (
               <div className="py-12 text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-[#008744] mx-auto mb-2" />
-                <h3 className="text-xl font-bold text-slate-900">INQUIRY RECEIVED</h3>
+                <h3 className="text-xl font-bold text-slate-900">INQUIRY TRANSMITTED</h3>
                 <p className="text-xs text-slate-600 max-w-md mx-auto">
-                  Thank you. Our institutional project desk has logged your request and will contact you within 24 business hours.
+                  Thank you. Your message has been sent directly to <strong>info@hsonestepsolutions.com</strong>. Our institutional project desk will review your requirements and respond within 24 business hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-6 py-2 bg-[#008744] text-white font-bold rounded-xl text-xs"
+                  className="mt-4 px-6 py-2 bg-[#008744] text-white font-bold rounded-xl text-xs font-mono"
                 >
                   Send Another Message
                 </button>
@@ -146,10 +156,20 @@ export const ContactLeadGen: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-gradient-to-r from-[#008744] to-[#065F38] text-white font-bold rounded-xl text-xs tracking-wider shadow-md shadow-emerald-700/20 flex items-center justify-center space-x-2"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 bg-gradient-to-r from-[#008744] to-[#065F38] text-white font-bold rounded-xl text-xs font-mono tracking-wider shadow-md shadow-emerald-700/20 flex items-center justify-center space-x-2 disabled:opacity-50"
                   >
-                    <span>TRANSMIT INQUIRY</span>
-                    <Send className="w-4 h-4" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>TRANSMITTING TO INFO@HSONESTEPSOLUTIONS.COM...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>TRANSMIT INQUIRY</span>
+                        <Send className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

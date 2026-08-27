@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { triggerHaptic } from "../../utils/haptics";
+import { submitInquiryToEmail } from "../../utils/formSubmit";
 import { 
-  Check, 
+  Check,
+  Loader2,
+  CheckCircle2,
+  RefreshCw, 
   ArrowRight, 
   ArrowLeft, 
   Building, 
@@ -26,6 +31,7 @@ interface ProjectBuilderProps {
 export const ProjectBuilder: React.FC<ProjectBuilderProps> = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [bedCapacity, setBedCapacity] = useState<number>(150);
   const [facilityArea, setFacilityArea] = useState<number>(45000);
 
@@ -70,9 +76,21 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = () => {
     setCurrentStep((prev) => Math.max(1, prev - 1));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    triggerHaptic(15);
+    setIsSubmitting(true);
+
+    await submitInquiryToEmail("PROJECT_BUILDER", {
+      ...builderState,
+      email: builderState.contactEmail,
+      projectScale: `${bedCapacity} Beds • ${facilityArea.toLocaleString()} Sq.Ft`,
+      message: `Configured Scope: ${builderState.sector} | Services: ${builderState.services.join(", ")}`
+    });
+
+    setIsSubmitting(false);
     setSubmitted(true);
+    triggerHaptic(30);
   };
 
   return (
@@ -340,10 +358,20 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = () => {
                   <div className="flex items-center justify-end">
                     <button
                       type="submit"
-                      className="px-8 py-3.5 bg-gradient-to-r from-[#008744] to-[#065F38] text-white font-bold rounded-xl text-xs tracking-wider shadow-md shadow-emerald-700/20 flex items-center space-x-2"
+                      disabled={isSubmitting}
+                      className="px-8 py-3.5 bg-gradient-to-r from-[#008744] to-[#065F38] text-white font-bold rounded-xl text-xs tracking-wider shadow-md shadow-emerald-700/20 flex items-center space-x-2 disabled:opacity-50"
                     >
-                      <span>SUBMIT FOR MASTER PROPOSAL</span>
-                      <ArrowRight className="w-4 h-4" />
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>TRANSMITTING TO INFO@HSONESTEPSOLUTIONS.COM...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>SUBMIT FOR MASTER PROPOSAL</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>
