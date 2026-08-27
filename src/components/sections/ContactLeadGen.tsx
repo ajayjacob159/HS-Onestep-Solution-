@@ -38,15 +38,15 @@ export const ContactLeadGen: React.FC = () => {
             <div className="space-y-4 pt-4 border-t border-slate-100 text-xs font-mono text-slate-600">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#008744]" />
-                <span>info@hsonestepsolutions.com • rfq@hsonestepsolutions.com</span>
+                <a href="mailto:info@hsonestepsolutions.com" className="hover:text-[#008744] transition-colors">info@hsonestepsolutions.com</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#008744]" />
-                <span>[Institutional Support Phone Placeholder]</span>
+                <span><a href="tel:+919130322864" className="hover:text-[#008744] transition-colors">+91 9130322864</a> / <a href="tel:+917739322864" className="hover:text-[#008744] transition-colors">+91 7739322864</a></span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-[#008744]" />
-                <span>[Corporate Headquarters & Registered Address]</span>
+                <span>Gandharv Nagari, Moshi, Bhosari - 411039, Pune, Maharashtra</span>
               </div>
             </div>
           </div>

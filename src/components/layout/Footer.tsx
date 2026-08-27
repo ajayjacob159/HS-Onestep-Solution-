@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
               <li><a href="#dashboard-concept" className="hover:text-[#008744] transition-colors">Project Telemetry (Demo)</a></li>
               <li><a href="#one-step-model" className="hover:text-[#008744] transition-colors">The 8-Stage Process</a></li>
               <li><a href="#founder" className="hover:text-[#008744] transition-colors font-semibold text-slate-900">Mr. Pratyaksh Pandey (Founder & CEO)</a></li>
-              <li><a href="#about" className="hover:text-[#008744] transition-colors">About Corporate Mission</a></li>
+              <li><a href="#about" className="hover:text-[#008744] transition-colors">About Us</a></li>
             </ul>
           </div>
 
@@ -76,11 +76,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
             <div className="space-y-2 text-slate-600 font-mono">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-[#008744] flex-shrink-0 mt-0.5" />
-                <span>[Corporate Headquarters & Registered Address]</span>
+                <span>Gandharv Nagari, Moshi, Bhosari - 411039, Pune</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-[#008744] flex-shrink-0" />
+                <span><a href="tel:+919130322864" className="hover:text-[#008744]">+91 9130322864</a> / <a href="tel:+917739322864" className="hover:text-[#008744]">+91 7739322864</a></span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#008744] flex-shrink-0" />
-                <span>info@hsonestepsolutions.com</span>
+                <a href="mailto:info@hsonestepsolutions.com" className="hover:text-[#008744]">info@hsonestepsolutions.com</a>
               </div>
             </div>
 

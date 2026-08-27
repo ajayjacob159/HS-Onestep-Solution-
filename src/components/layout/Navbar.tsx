@@ -57,7 +57,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
         </a>
 
         {/* Desktop Corporate Navigation (Clean, Neat & Organized) */}
-        <nav className="hidden xl:flex items-center space-x-8 text-[13px] font-bold text-slate-700 tracking-wide">
+        <nav className="hidden xl:flex items-center space-x-7 text-[13px] font-bold text-slate-700 tracking-wide">
+          {/* Home Link */}
+          <a 
+            href="#" 
+            className="hover:text-[#008744] transition-colors"
+            onClick={() => triggerHaptic(10)}
+          >
+            Home
+          </a>
           
           {/* 1. Solutions Mega Dropdown */}
           <div 
@@ -174,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
                   }}
                   className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
                 >
-                  <div className="font-bold text-slate-900 hover:text-[#008744]">Corporate Mission</div>
+                  <div className="font-bold text-slate-900 hover:text-[#008744]">About Us</div>
                   <div className="text-[10px] text-slate-500 font-mono mt-0.5">Established 2024 Profile</div>
                 </a>
 
@@ -238,7 +246,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             <a href="#roadmap" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">Execution Highway (365 Days)</a>
             <a href="#procurement" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">B2B Procurement Catalog</a>
             <a href="#founder" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold">Mr. Pratyaksh Pandey (Founder & CEO)</a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">About Corporate Mission</a>
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">About About Us</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744]">Contact Desk</a>
           </div>
 
