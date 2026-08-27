@@ -9,7 +9,10 @@ import {
   CheckCircle2, 
   Layers, 
   ShieldCheck,
-  Bot
+  Bot,
+  Scan,
+  Database,
+  BarChart3
 } from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
 
@@ -18,7 +21,7 @@ interface TechIntelligenceProps {
 }
 
 export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ }) => {
-  const [activeTab, setActiveTab] = useState<"software" | "ai" | "marketing">("ai");
+  const [activeTab, setActiveTab] = useState<"ai" | "software" | "marketing">("ai");
 
   return (
     <section className="py-20 bg-slate-900 text-white border-b border-slate-800 relative overflow-hidden">
@@ -47,7 +50,7 @@ export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ })
         <div className="flex justify-center mb-10">
           <div className="bg-slate-800/90 backdrop-blur-md p-1.5 rounded-2xl border border-slate-700 inline-flex space-x-2">
             {[
-              { id: "ai", label: "AI Process Automations", icon: Bot },
+              { id: "ai", label: "AI Robotic Process Automation (RPA)", icon: Bot },
               { id: "software", label: "Enterprise Software & Apps", icon: Code2 },
               { id: "marketing", label: "Digital Marketing & Growth", icon: TrendingUp }
             ].map((tab) => {
@@ -76,26 +79,30 @@ export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ })
 
         {/* Tab Content Display Card */}
         <div className="bg-slate-950/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          
+          {/* TAB 1: AI Robotic Process Automation (RPA) Orchestration Engine */}
           {activeTab === "ai" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-5">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-bold">
                   <Cpu className="w-3.5 h-3.5" />
-                  <span>AUTONOMOUS OPERATIONS ENGINE</span>
+                  <span>AI ROBOTIC PROCESS AUTOMATION (RPA)</span>
                 </div>
+                
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                  Automate Any Manual Operation to Scale Rapidly
+                  Automate Any Manual Operation to Scale at 10x Speed
                 </h3>
+                
                 <p className="text-sm text-slate-300 leading-relaxed font-light">
-                  Replace repetitive human data entry, manual document validation, procurement calculations, and customer routing with 24/7 intelligent AI agents and Robotic Process Automation (RPA).
+                  Replace repetitive human data entry, manual BOQ validation, procurement calculations, and customer routing with 24/7 self-healing AI agents and intelligent robotic orchestration.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 pt-1">
-                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                  <div className="p-3.5 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
                     <span className="text-emerald-400 font-extrabold font-mono text-xl block">10x Speed</span>
-                    <span className="text-[11px] text-slate-400">Zero-Delay Execution</span>
+                    <span className="text-[11px] text-slate-400">Zero-Delay Operations</span>
                   </div>
-                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
+                  <div className="p-3.5 bg-slate-900 border border-slate-800 rounded-xl space-y-1">
                     <span className="text-[#D4AF37] font-extrabold font-mono text-xl block">99.9% Defect-Free</span>
                     <span className="text-[11px] text-slate-400">Automated Audit Trail</span>
                   </div>
@@ -106,46 +113,52 @@ export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ })
                     onClick={() => onOpenRFQ && onOpenRFQ("ai-automations")}
                     className="px-6 py-3 bg-[#008744] hover:bg-[#065F38] text-white font-bold rounded-xl text-xs font-mono tracking-wider shadow-lg flex items-center space-x-2"
                   >
-                    <span>DEPLOY AI AUTOMATIONS</span>
+                    <span>DEPLOY AI RPA AUTOMATIONS</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
 
-              <div className="lg:col-span-6 space-y-3">
-                <div className="p-4 bg-slate-900/90 border border-slate-800 rounded-2xl flex items-start space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">
-                    01
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Intelligent Document & Invoice Processing</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Automated parsing of vendor BOQs, tax invoices, purchase orders, and compliance certificates in seconds.</p>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-slate-900/90 border border-slate-800 rounded-2xl flex items-start space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">
-                    02
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Computer Vision for Site & Quality Inspection</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Real-time camera analytics checking civil construction milestones, MEP alignment, and cleanroom sterile protocols.</p>
+              {/* Right: AI RPA Photo Showcase */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="relative h-60 sm:h-64 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+                  <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1000&q=80"
+                    alt="AI Robotic Process Automation Orchestration Engine"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 text-white flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block">ORCHESTRATION ENGINE</span>
+                      <span className="text-sm font-bold">Autonomous AI Workflows</span>
+                    </div>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#008744] text-white font-bold">24/7 ACTIVE</span>
                   </div>
                 </div>
 
-                <div className="p-4 bg-slate-900/90 border border-slate-800 rounded-2xl flex items-start space-x-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono flex-shrink-0">
-                    03
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl flex items-start space-x-3">
+                    <Scan className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-bold text-white">Intelligent Document Parsing</h4>
+                      <p className="text-[11px] text-slate-400 mt-0.5">Automated parsing of vendor BOQs and tax invoices in seconds.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Autonomous 24/7 AI Institutional Desk</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Instant RFP/RFQ inquiry routing, technical spec lookup, and client communication workflows.</p>
+
+                  <div className="p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl flex items-start space-x-3">
+                    <Bot className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-xs font-bold text-white">AI Vision Site Check</h4>
+                      <p className="text-[11px] text-slate-400 mt-0.5">Automated camera inspection of construction and sterile zones.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
+          {/* TAB 2: Enterprise Software */}
           {activeTab === "software" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-5">
@@ -179,29 +192,39 @@ export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ })
                 </div>
               </div>
 
-              <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-slate-900 p-6 space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs font-mono text-emerald-400 font-bold">CUSTOM SOFTWARE ARCHITECTURE</span>
-                  <span className="text-[10px] font-mono text-slate-400">SOC-2 / HIPAA READY</span>
+              {/* Right: Software Photo Showcase */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="relative h-60 sm:h-64 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80"
+                    alt="Enterprise Software Cloud Dashboard"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 text-white flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block">CLOUD HMIS & ERP</span>
+                      <span className="text-sm font-bold">Enterprise Cloud Architecture</span>
+                    </div>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800 text-[#D4AF37] font-bold border border-slate-700">SOC-2 READY</span>
+                  </div>
                 </div>
-                <div className="space-y-2.5 text-xs text-slate-300 font-mono">
-                  <div className="flex justify-between p-2 rounded-lg bg-slate-950 border border-slate-800/80">
-                    <span>Cloud HMIS / ERP Portal</span>
-                    <span className="text-emerald-400 font-bold">DEPLOYED</span>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-between">
+                    <span className="text-slate-300">Cross-Platform Apps</span>
+                    <span className="text-emerald-400 font-bold">iOS & Android</span>
                   </div>
-                  <div className="flex justify-between p-2 rounded-lg bg-slate-950 border border-slate-800/80">
-                    <span>Cross-Platform iOS & Android Apps</span>
-                    <span className="text-emerald-400 font-bold">NATIVE</span>
-                  </div>
-                  <div className="flex justify-between p-2 rounded-lg bg-slate-950 border border-slate-800/80">
-                    <span>Real-Time Project PMO Telemetry</span>
-                    <span className="text-[#D4AF37] font-bold">LIVE TELEMETRY</span>
+                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-between">
+                    <span className="text-slate-300">Microservice APIs</span>
+                    <span className="text-emerald-400 font-bold">99.99% SLA</span>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
+          {/* TAB 3: Digital Growth Marketing */}
           {activeTab === "marketing" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-5">
@@ -242,27 +265,32 @@ export const TechIntelligence: React.FC<TechIntelligenceProps> = ({ onOpenRFQ })
                 </div>
               </div>
 
-              <div className="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
-                <h4 className="text-xs font-mono text-white font-bold uppercase border-b border-slate-800 pb-2">
-                  FULL-FUNNEL GROWTH CAPABILITIES
-                </h4>
-                <div className="space-y-2 text-xs text-slate-300">
-                  <div className="flex items-center space-x-2 bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>Global B2B Paid Search & Social Media Performance Advertising</span>
+              {/* Right: Marketing Analytics Photo Showcase */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="relative h-60 sm:h-64 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+                  <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
+                    alt="Digital Growth Marketing Analytics"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 text-white flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block">GROWTH ENGINE</span>
+                      <span className="text-sm font-bold">Multi-Channel B2B Acquisition</span>
+                    </div>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#008744] text-white font-bold">GLOBAL SCALE</span>
                   </div>
-                  <div className="flex items-center space-x-2 bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>Answer Engine Optimization (AEO) for ChatGPT, Perplexity & Google AI</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>High-Authority Executive PR & Global Corporate Branding</span>
-                  </div>
+                </div>
+
+                <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-between text-xs font-mono">
+                  <span className="text-slate-300">Answer Engine Optimization</span>
+                  <span className="text-emerald-400 font-bold">ChatGPT & Gemini Ready</span>
                 </div>
               </div>
             </div>
           )}
+
         </div>
 
       </div>

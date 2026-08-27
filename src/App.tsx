@@ -1,30 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { ModalRFQ } from "./components/layout/ModalRFQ";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { PWAInstallBanner } from "./components/layout/PWAInstallBanner";
-import { HeroExperience } from "./components/hero/HeroExperience";
-import { PictorialMarquee } from "./components/sections/PictorialMarquee";
-import { InteractiveProjectRoadmap } from "./components/sections/InteractiveProjectRoadmap";
-import { CorporateCampusShowcase } from "./components/sections/CorporateCampusShowcase";
-import { FounderSection } from "./components/sections/FounderSection";
-import { CategoryStripCarousel } from "./components/sections/CategoryStripCarousel";
-import { TechIntelligence } from "./components/sections/TechIntelligence";
-import { HospitalFloorplanExplorer } from "./components/sections/HospitalFloorplanExplorer";
-import { VendorComparison } from "./components/sections/VendorComparison";
-import { OneStepModel } from "./components/sections/OneStepModel";
-import { SectorsGrid } from "./components/sections/SectorsGrid";
-import { HospitalEcosystem } from "./components/sections/HospitalEcosystem";
-import { ProjectDashboardConcept } from "./components/sections/ProjectDashboardConcept";
-import { ProcurementCatalog } from "./components/sections/ProcurementCatalog";
-import { ProjectBuilder } from "./components/sections/ProjectBuilder";
-import { GovernmentPublicPrivate } from "./components/sections/GovernmentPublicPrivate";
-import { GlobalSupplyMap } from "./components/sections/GlobalSupplyMap";
-import { TrustPillars } from "./components/sections/TrustPillars";
-import { CaseStudies } from "./components/sections/CaseStudies";
-import { AboutMission } from "./components/sections/AboutMission";
-import { ContactLeadGen } from "./components/sections/ContactLeadGen";
+
+// Dedicated Pages
+import { HomePage } from "./pages/HomePage";
+import { HospitalDevelopmentPage } from "./pages/HospitalDevelopmentPage";
+import { CadFloorplanPage } from "./pages/CadFloorplanPage";
+import { ExecutionHighwayPage } from "./pages/ExecutionHighwayPage";
+import { ProcurementPage } from "./pages/ProcurementPage";
+
 import { triggerHaptic } from "./utils/haptics";
 
 export const App: React.FC = () => {
@@ -69,127 +57,96 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
-      {/* Android PWA Install Banner */}
-      <PWAInstallBanner />
+    <BrowserRouter>
+      <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
+        {/* Android PWA Install Banner */}
+        <PWAInstallBanner />
 
-      {/* Clean Corporate Navbar */}
-      <Navbar
-        onOpenRFQ={handleOpenRFQ}
-        onOpenProjectBuilder={handleOpenProjectBuilder}
-      />
-
-      <main className="flex-1">
-        {/* Visual Hero Experience with Corporate HQ Background */}
-        <HeroExperience
-          onOpenRFQ={() => handleOpenRFQ()}
+        {/* Clean Corporate Navbar */}
+        <Navbar
+          onOpenRFQ={handleOpenRFQ}
           onOpenProjectBuilder={handleOpenProjectBuilder}
         />
 
-        {/* Continuous Horizontal Pictorial Marquee Scroller */}
-        <PictorialMarquee />
+        <main className="flex-1">
+          <Routes>
+            {/* 1. Main Home Page */}
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  onOpenRFQ={handleOpenRFQ}
+                  onOpenProjectBuilder={handleOpenProjectBuilder}
+                  onSelectSectorFromCarousel={handleSelectSectorFromCarousel}
+                />
+              }
+            />
 
-        {/* Interactive Turnkey Project Execution Roadmap */}
-        <InteractiveProjectRoadmap
+            {/* 2. Standalone Hospital Development Page */}
+            <Route
+              path="/hospital-development"
+              element={
+                <HospitalDevelopmentPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 3. Standalone Interactive CAD Floorplan Page */}
+            <Route
+              path="/cad-floorplan"
+              element={
+                <CadFloorplanPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 4. Standalone 365-Day Execution Highway Page */}
+            <Route
+              path="/execution-highway"
+              element={
+                <ExecutionHighwayPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 5. Standalone B2B Procurement Catalog Page */}
+            <Route
+              path="/procurement"
+              element={
+                <ProcurementPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* Catch-all redirect */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        {/* Streamlined Corporate Footer */}
+        <Footer
           onOpenRFQ={handleOpenRFQ}
         />
 
-        {/* Executive Leadership: Mr. Pratyaksh Pandey (Founder & CEO) */}
-        <FounderSection
-          onOpenRFQ={() => handleOpenRFQ()}
-        />
-
-        {/* IT Technology, Software & AI Automations Engine */}
-        <TechIntelligence
+        {/* Mobile Floating Quick-Action Bar */}
+        <MobileBottomBar
           onOpenRFQ={handleOpenRFQ}
+          onOpenProjectBuilder={handleOpenProjectBuilder}
         />
 
-        {/* Full-Bleed Corporate Campus & Headquarters Showcase */}
-        <CorporateCampusShowcase
-          onOpenRFQ={() => handleOpenRFQ()}
+        {/* Global RFQ / BOQ Modal */}
+        <ModalRFQ
+          isOpen={rfqModalOpen}
+          onClose={() => setRfqModalOpen(false)}
+          initialSector={selectedRfqSector}
+          initialProduct={selectedRfqProduct}
         />
-
-        {/* Skanvi-Style Sector Carousel */}
-        <CategoryStripCarousel
-          onSelectSector={handleSelectSectorFromCarousel}
-        />
-
-        {/* Interactive CAD Hospital Floorplan Explorer */}
-        <HospitalFloorplanExplorer
-          onOpenRFQ={handleOpenRFQ}
-        />
-
-        {/* Execution Model Comparison */}
-        <VendorComparison />
-
-        {/* The One Step Model (8 Stages) */}
-        <OneStepModel />
-
-        {/* Pictorial 12-Sectors Grid */}
-        <SectorsGrid
-          onOpenRFQ={handleOpenRFQ}
-        />
-
-        {/* Flagship Turnkey Hospital Ecosystem */}
-        <HospitalEcosystem
-          onOpenRFQ={handleOpenRFQ}
-        />
-
-        {/* Simulated Central Project Telemetry Dashboard */}
-        <ProjectDashboardConcept />
-
-        {/* Institutional Procurement Catalog */}
-        <ProcurementCatalog
-          onOpenRFQ={handleOpenRFQ}
-        />
-
-        {/* Interactive Project Builder */}
-        <ProjectBuilder
-          onOpenRFQ={() => handleOpenRFQ()}
-        />
-
-        {/* Tri-Pillar: Government, Public & Private Sector */}
-        <GovernmentPublicPrivate
-          onOpenRFQ={handleOpenRFQ}
-        />
-
-        {/* Global Sourcing Network Map */}
-        <GlobalSupplyMap />
-
-        {/* Corporate Trust Pillars & Metrics */}
-        <TrustPillars />
-
-        {/* Case Studies */}
-        <CaseStudies />
-
-        {/* Corporate Mission & Story */}
-        <AboutMission
-          onOpenRFQ={() => handleOpenRFQ()}
-        />
-
-        {/* Institutional Contact & Lead Desk */}
-        <ContactLeadGen />
-      </main>
-
-      {/* Streamlined Corporate Footer */}
-      <Footer
-        onOpenRFQ={handleOpenRFQ}
-      />
-
-      {/* Mobile Floating Quick-Action Bar */}
-      <MobileBottomBar
-        onOpenRFQ={handleOpenRFQ}
-        onOpenProjectBuilder={handleOpenProjectBuilder}
-      />
-
-      {/* Global RFQ / BOQ Modal */}
-      <ModalRFQ
-        isOpen={rfqModalOpen}
-        onClose={() => setRfqModalOpen(false)}
-        initialSector={selectedRfqSector}
-        initialProduct={selectedRfqProduct}
-      />
-    </div>
+      </div>
+    </BrowserRouter>
   );
 };
 

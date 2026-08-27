@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { 
   Building2, 
   Sparkles, 
   SlidersHorizontal, 
   FileText, 
   Phone, 
-  MessageCircle, 
   X, 
   ChevronRight,
-  ArrowRight
+  Package,
+  Clock,
+  Activity
 } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
+import { triggerHaptic } from "../../utils/haptics";
 
 interface MobileBottomBarProps {
   onOpenRFQ: (sectorId?: string) => void;
@@ -51,7 +54,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
               {SECTORS.map((sec) => (
                 <a
                   key={sec.id}
-                  href={`#sector-${sec.id}`}
+                  href={`/#sector-${sec.id}`}
                   onClick={() => setSectorDrawerOpen(false)}
                   className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 active:bg-emerald-50 active:border-[#008744]"
                 >
@@ -74,43 +77,52 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-3 py-2 sm:hidden flex items-center justify-around shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
         {/* 1. Sectors Drawer */}
         <button
-          onClick={() => setSectorDrawerOpen(!sectorDrawerOpen)}
+          onClick={() => {
+            triggerHaptic(10);
+            setSectorDrawerOpen(!sectorDrawerOpen);
+          }}
           className="flex flex-col items-center justify-center p-1.5 text-slate-600 active:text-[#008744]"
         >
           <Building2 className="w-5 h-5 mb-0.5" />
           <span className="text-[10px] font-bold font-mono">Sectors</span>
         </button>
 
-        {/* 2. CAD Floorplan */}
-        <a
-          href="#floorplan"
+        {/* 2. CAD Floorplan Page Link */}
+        <Link
+          to="/cad-floorplan"
+          onClick={() => triggerHaptic(10)}
           className="flex flex-col items-center justify-center p-1.5 text-slate-600 active:text-[#008744]"
         >
           <Sparkles className="w-5 h-5 mb-0.5 text-[#D4AF37]" />
           <span className="text-[10px] font-bold font-mono">Floorplan</span>
-        </a>
+        </Link>
 
         {/* 3. Center Big RFQ Button */}
         <button
-          onClick={() => onOpenRFQ()}
+          onClick={() => {
+            triggerHaptic(20);
+            onOpenRFQ();
+          }}
           className="flex flex-col items-center justify-center -mt-5 px-4 py-2 bg-gradient-to-r from-[#008744] to-[#065F38] text-white rounded-2xl shadow-lg shadow-emerald-700/30 active:scale-95 transition-transform"
         >
           <FileText className="w-5 h-5 mb-0.5" />
           <span className="text-[10px] font-extrabold font-mono uppercase tracking-wider">RFQ / BOQ</span>
         </button>
 
-        {/* 4. Project Builder */}
-        <button
-          onClick={onOpenProjectBuilder}
+        {/* 4. Procurement Catalog Page Link */}
+        <Link
+          to="/procurement"
+          onClick={() => triggerHaptic(10)}
           className="flex flex-col items-center justify-center p-1.5 text-slate-600 active:text-[#008744]"
         >
-          <SlidersHorizontal className="w-5 h-5 mb-0.5 text-[#008744]" />
-          <span className="text-[10px] font-bold font-mono">Builder</span>
-        </button>
+          <Package className="w-5 h-5 mb-0.5 text-slate-700" />
+          <span className="text-[10px] font-bold font-mono">Catalog</span>
+        </Link>
 
         {/* 5. Contact Desk */}
         <a
-          href="#contact"
+          href="/#contact"
+          onClick={() => triggerHaptic(10)}
           className="flex flex-col items-center justify-center p-1.5 text-slate-600 active:text-[#008744]"
         >
           <Phone className="w-5 h-5 mb-0.5" />

@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowUpRight, ShieldCheck, Mail, Phone, MapPin, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
 
 interface FooterProps {
   onOpenRFQ: (sectorId?: string) => void;
@@ -16,11 +17,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
           {/* Column 1: Brand & Identity */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src="/logo.png" 
-                alt="HS ONE STEP SOLUTIONS" 
-                className="h-12 object-contain" 
-              />
+              <Link to="/">
+                <img 
+                  src="/logo.png" 
+                  alt="HS ONE STEP SOLUTIONS" 
+                  className="h-12 object-contain" 
+                />
+              </Link>
             </div>
             
             <p className="text-slate-600 leading-relaxed">
@@ -43,28 +46,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
               Core Capabilities
             </h4>
             <ul className="space-y-2 text-slate-600">
-              <li><a href="#hospital-flagship" className="hover:text-[#008744] transition-colors">Hospital Development (Turnkey)</a></li>
-              <li><a href="#sector-medical-surgical" className="hover:text-[#008744] transition-colors">Medical & Surgical Equipment</a></li>
-              <li><a href="#sector-construction-infrastructure" className="hover:text-[#008744] transition-colors">Construction & Infrastructure</a></li>
-              <li><a href="#sector-energy" className="hover:text-[#008744] transition-colors">Energy & Critical Power</a></li>
-              <li><a href="#sector-commercial-kitchens" className="hover:text-[#008744] transition-colors">Commercial & Dietary Kitchens</a></li>
-              <li><a href="#sector-fire-safety" className="hover:text-[#008744] transition-colors">Fire & Life Safety</a></li>
+              <li><Link to="/hospital-development" className="hover:text-[#008744] transition-colors font-medium">Hospital Development (Turnkey)</Link></li>
+              <li><a href="/#sector-medical-surgical" className="hover:text-[#008744] transition-colors">Medical & Surgical Equipment</a></li>
+              <li><a href="/#sector-construction-infrastructure" className="hover:text-[#008744] transition-colors">Construction & Infrastructure</a></li>
+              <li><a href="/#sector-energy" className="hover:text-[#008744] transition-colors">Energy & Critical Power</a></li>
+              <li><a href="/#sector-commercial-kitchens" className="hover:text-[#008744] transition-colors">Commercial & Dietary Kitchens</a></li>
+              <li><a href="/#sector-fire-safety" className="hover:text-[#008744] transition-colors">Fire & Life Safety</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Platform Tools */}
+          {/* Column 3: Dedicated Platforms */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-widest border-b border-slate-100 pb-2">
-              Interactive Tools
+              Platforms & Pages
             </h4>
             <ul className="space-y-2 text-slate-600">
-              <li><a href="#floorplan" className="hover:text-[#008744] transition-colors font-medium">CAD Floorplan Explorer</a></li>
-              <li><a href="#project-builder" className="hover:text-[#008744] transition-colors">4-Step Project Builder</a></li>
-              <li><a href="#procurement" className="hover:text-[#008744] transition-colors">B2B Procurement Catalog</a></li>
-              <li><a href="#dashboard-concept" className="hover:text-[#008744] transition-colors">Project Telemetry (Demo)</a></li>
-              <li><a href="#one-step-model" className="hover:text-[#008744] transition-colors">The 8-Stage Process</a></li>
-              <li><a href="#founder" className="hover:text-[#008744] transition-colors font-semibold text-slate-900">Mr. Pratyaksh Pandey (Founder & CEO)</a></li>
-              <li><a href="#about" className="hover:text-[#008744] transition-colors">About Us</a></li>
+              <li><Link to="/hospital-development" className="hover:text-[#008744] transition-colors">Hospital Flagship</Link></li>
+              <li><Link to="/cad-floorplan" className="hover:text-[#008744] transition-colors">CAD Floorplan Explorer</Link></li>
+              <li><Link to="/execution-highway" className="hover:text-[#008744] transition-colors">Execution Highway (365 Days)</Link></li>
+              <li><Link to="/procurement" className="hover:text-[#008744] transition-colors">B2B Procurement Catalog</Link></li>
+              <li><a href="/#founder" className="hover:text-[#008744] transition-colors font-semibold text-slate-900">Mr. Pratyaksh Pandey (Founder & CEO)</a></li>
+              <li><a href="/#about" className="hover:text-[#008744] transition-colors">About Us (Company Profile)</a></li>
             </ul>
           </div>
 
