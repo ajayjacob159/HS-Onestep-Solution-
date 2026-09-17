@@ -14,7 +14,11 @@ import {
   Users,
   Layers,
   Clock,
-  ThumbsUp
+  ThumbsUp,
+  Scale,
+  FileCheck2,
+  Gavel,
+  Shield
 } from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
 
@@ -51,6 +55,29 @@ const CORE_EXPERTISE = [
   }
 ];
 
+const LEGAL_PILLARS = [
+  {
+    title: "Supreme Court & Appellate Advisory",
+    desc: "Constitutional jurisprudence, regulatory statutory compliance, and apex judicial advisory.",
+    icon: Gavel
+  },
+  {
+    title: "Tender & EPC Contract Governance",
+    desc: "Vetting of public sector tenders, FIDIC/EPC master agreements, and inter-vendor covenants.",
+    icon: FileCheck2
+  },
+  {
+    title: "Healthcare Statutory Compliance",
+    desc: "Regulatory alignment across NABH standards, AERB diagnostic clearances, and NHM mandates.",
+    icon: Scale
+  },
+  {
+    title: "Risk Mitigation & Dispute Prevention",
+    desc: "Preventive institutional audits, vendor compliance enforcement, and liability structuring.",
+    icon: Shield
+  }
+];
+
 interface FounderSectionProps {
   onOpenRFQ?: () => void;
 }
@@ -62,31 +89,29 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
       {/* Background Subtle CAD Grid */}
       <div className="absolute inset-0 bg-blueprint-light opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
-        {/* Section Pill */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        {/* Section Pill & Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-[#008744] text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
             <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Executive Leadership & Vision</span>
+            <span>Executive Leadership & Advisory Board</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            LEADERSHIP BEHIND THE MISSION
+            LEADERSHIP & LEGAL GOVERNANCE
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Over a decade of cross-sectoral execution transforming India’s healthcare and institutional landscape.
+            Backed by a decade of cross-sectoral operational mastery and highest-echelon legal governance at the Supreme Court of India.
           </p>
         </div>
 
-        {/* Main 2-Column Executive Card */}
+        {/* 1. FOUNDER & CEO: MR. PRATYAKSH PANDEY */}
         <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             {/* Left: Founder Portrait & Verified Credentials Plaque */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              
               <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
                 <img
                   src="/founder.jpg"
@@ -94,7 +119,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                   className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 
-                {/* Subtle gradient scrim at bottom of portrait */}
+                {/* Subtle gradient scrim */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 
                 {/* Verified Badge */}
@@ -120,12 +145,10 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                 </div>
                 <span className="text-slate-500 font-semibold">PRIVATE • PUBLIC • GOV</span>
               </div>
-
             </div>
 
             {/* Right: Executive Narrative & Core Strengths Portfolio */}
             <div className="lg:col-span-7 space-y-6">
-              
               <div>
                 <span className="text-xs font-mono text-[#008744] font-extrabold uppercase tracking-widest block mb-1">
                   STRATEGIC LEADERSHIP PROFILE
@@ -209,9 +232,124 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
               </div>
 
             </div>
-
           </div>
+        </div>
 
+        {/* 2. LEGAL ADVISOR: AARATI SAH (ADVOCATE AT SUPREME COURT OF INDIA) */}
+        <div className="bg-slate-900 text-white border border-slate-800 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+          {/* Decorative circuit line */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative z-10">
+            
+            {/* Left: Portrait & Legal Plaque */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-slate-950 group">
+                <img
+                  src="/aarati-sah.jpg"
+                  alt="Aarati Sah - Legal Advisor, Advocate at Supreme Court of India"
+                  className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Gradient Scrim */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
+                
+                {/* Supreme Court Standing Badge */}
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md text-[#D4AF37] border border-[#D4AF37]/50 text-[10px] font-mono font-extrabold uppercase shadow-lg flex items-center space-x-1.5">
+                    <Scale className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <span>LEGAL ADVISOR</span>
+                  </span>
+                </div>
+
+                {/* Name Tag */}
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <h3 className="text-xl font-bold tracking-tight">Aarati Sah</h3>
+                  <p className="text-xs text-emerald-400 font-mono font-semibold">Advocate at Supreme Court of India</p>
+                </div>
+              </div>
+
+              {/* Bar Standing Badge below photo */}
+              <div className="w-full max-w-sm mt-4 bg-slate-950 border border-slate-800 p-3.5 rounded-2xl shadow-sm flex items-center justify-between text-xs font-mono">
+                <div className="flex items-center space-x-2">
+                  <Gavel className="w-4 h-4 text-[#D4AF37]" />
+                  <span className="font-bold text-white">SUPREME COURT OF INDIA</span>
+                </div>
+                <span className="text-emerald-400 font-semibold">LEGAL ADVISOR</span>
+              </div>
+            </div>
+
+            {/* Right: Legal Governance Narrative & Pillars */}
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 font-extrabold uppercase tracking-widest block mb-1">
+                  INSTITUTIONAL LEGAL COUNSEL
+                </span>
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  Aarati Sah
+                </h3>
+                <p className="text-sm font-mono text-[#D4AF37] font-bold mt-1">
+                  Legal Advisor | Advocate at Supreme Court of India
+                </p>
+              </div>
+
+              {/* Narrative */}
+              <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                <p>
+                  <strong className="text-white font-bold bg-slate-800 px-2.5 py-1 rounded-xl border border-slate-700 mr-1.5 inline-block text-emerald-400">
+                    Aarati Sah serves as Legal Advisor to HS ONE STEP SOLUTIONS
+                  </strong>
+                  , guiding the organization with strategic legal oversight, statutory regulatory compliance, and contractual integrity as an Advocate at the Supreme Court of India.
+                </p>
+
+                <p>
+                  Her counsel ensures that all multi-sector turnkey projects, government tender covenants, NHM healthcare programs, and corporate CSR partnerships operate under rigorous legal governance, zero-defect statutory compliance, and ironclad dispute mitigation frameworks.
+                </p>
+              </div>
+
+              {/* 4 Legal Governance Pillars */}
+              <div className="pt-2">
+                <div className="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+                  <span className="text-xs font-mono text-white font-extrabold uppercase tracking-wider flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                    <span>LEGAL GOVERNANCE & STATUTORY PILLARS</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-[#D4AF37] font-bold">APEX COURT JURISPRUDENCE</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {LEGAL_PILLARS.map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <div 
+                        key={idx} 
+                        className="p-3.5 bg-slate-950/80 border border-slate-800 hover:border-emerald-500 rounded-2xl flex items-start space-x-3 shadow-sm hover:shadow-md transition-all group"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-slate-900 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 flex items-center justify-center font-bold flex-shrink-0 border border-slate-700 transition-colors">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors leading-tight">
+                            {item.title}
+                          </h4>
+                          <p className="text-[11px] text-slate-400 mt-0.5 leading-snug font-light">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Bottom Assurance */}
+              <div className="pt-4 flex items-center space-x-3 text-xs font-mono text-slate-400 border-t border-slate-800">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Statutory Compliance • Public Procurement Integrity • Dispute-Proof Contracting</span>
+              </div>
+
+            </div>
+          </div>
         </div>
 
       </div>

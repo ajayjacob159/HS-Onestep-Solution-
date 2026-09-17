@@ -17,7 +17,8 @@ import {
   Package,
   Activity,
   Images,
-  User
+  User,
+  Scale
 } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
 import { triggerHaptic } from "../../utils/haptics";
@@ -128,6 +129,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
                     <span>Founder Profile</span>
                   </div>
                   <div className="text-[10px] text-slate-500 font-mono mt-0.5">Mr. Pratyaksh Pandey (Founder & CEO)</div>
+                </a>
+
+                {/* 3. Legal Advisor */}
+                <a
+                  href="/#founder"
+                  onClick={() => {
+                    triggerHaptic(10);
+                    setAboutOpen(false);
+                  }}
+                  className="block p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all text-xs"
+                >
+                  <div className="font-bold text-slate-900 hover:text-[#008744] flex items-center space-x-2">
+                    <Scale className="w-4 h-4 text-emerald-600" />
+                    <span>Legal Advisor</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">Aarati Sah (Advocate, Supreme Court)</div>
                 </a>
 
                 {/* 3. Institutional Contact */}
@@ -313,6 +330,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
             <a href="/#founder" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-[#008744] font-bold flex items-center space-x-2">
               <Award className="w-4 h-4 text-[#D4AF37]" />
               <span>Founder Profile (Mr. Pratyaksh Pandey)</span>
+            </a>
+            <a href="/#founder" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-800 hover:text-[#008744] flex items-center space-x-2">
+              <Scale className="w-4 h-4 text-emerald-600" />
+              <span>Legal Advisor (Aarati Sah, Supreme Court)</span>
             </a>
             <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 hover:text-[#008744] flex items-center space-x-2">
               <Phone className="w-4 h-4 text-[#008744]" />
