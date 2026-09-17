@@ -16,9 +16,7 @@ import {
   Clock,
   ThumbsUp,
   Scale,
-  FileCheck2,
-  Gavel,
-  Shield
+  Gavel
 } from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
 
@@ -52,29 +50,6 @@ const CORE_EXPERTISE = [
     title: "Client Trust & Quality Assurance",
     desc: "Strong focus on quality and client satisfaction, building long-term, trusted relationships.",
     icon: ThumbsUp
-  }
-];
-
-const LEGAL_PILLARS = [
-  {
-    title: "Supreme Court & Appellate Advisory",
-    desc: "Constitutional jurisprudence, regulatory statutory compliance, and apex judicial advisory.",
-    icon: Gavel
-  },
-  {
-    title: "Tender & EPC Contract Governance",
-    desc: "Vetting of public sector tenders, FIDIC/EPC master agreements, and inter-vendor covenants.",
-    icon: FileCheck2
-  },
-  {
-    title: "Healthcare Statutory Compliance",
-    desc: "Regulatory alignment across NABH standards, AERB diagnostic clearances, and NHM mandates.",
-    icon: Scale
-  },
-  {
-    title: "Risk Mitigation & Dispute Prevention",
-    desc: "Preventive institutional audits, vendor compliance enforcement, and liability structuring.",
-    icon: Shield
   }
 ];
 
@@ -301,51 +276,6 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                   </strong>
                   , guiding the organization with strategic legal oversight, statutory regulatory compliance, and contractual integrity as an Advocate at the Supreme Court of India.
                 </p>
-
-                <p>
-                  Her counsel ensures that all multi-sector turnkey projects, government tender covenants, NHM healthcare programs, and corporate CSR partnerships operate under rigorous legal governance, zero-defect statutory compliance, and ironclad dispute mitigation frameworks.
-                </p>
-              </div>
-
-              {/* 4 Legal Governance Pillars */}
-              <div className="pt-2">
-                <div className="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
-                  <span className="text-xs font-mono text-white font-extrabold uppercase tracking-wider flex items-center space-x-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                    <span>LEGAL GOVERNANCE & STATUTORY PILLARS</span>
-                  </span>
-                  <span className="text-[10px] font-mono text-[#D4AF37] font-bold">APEX COURT JURISPRUDENCE</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {LEGAL_PILLARS.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                      <div 
-                        key={idx} 
-                        className="p-3.5 bg-slate-950/80 border border-slate-800 hover:border-emerald-500 rounded-2xl flex items-start space-x-3 shadow-sm hover:shadow-md transition-all group"
-                      >
-                        <div className="w-8 h-8 rounded-xl bg-slate-900 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 flex items-center justify-center font-bold flex-shrink-0 border border-slate-700 transition-colors">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <h4 className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors leading-tight">
-                            {item.title}
-                          </h4>
-                          <p className="text-[11px] text-slate-400 mt-0.5 leading-snug font-light">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Bottom Assurance */}
-              <div className="pt-4 flex items-center space-x-3 text-xs font-mono text-slate-400 border-t border-slate-800">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Statutory Compliance • Public Procurement Integrity • Dispute-Proof Contracting</span>
               </div>
 
             </div>
