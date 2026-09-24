@@ -6,13 +6,17 @@ import { ModalRFQ } from "./components/layout/ModalRFQ";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { PWAInstallBanner } from "./components/layout/PWAInstallBanner";
 
-// Dedicated Pages
+// Dedicated Standalone Pages
 import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { TeamPage } from "./pages/TeamPage";
 import { HospitalDevelopmentPage } from "./pages/HospitalDevelopmentPage";
 import { CadFloorplanPage } from "./pages/CadFloorplanPage";
 import { ExecutionHighwayPage } from "./pages/ExecutionHighwayPage";
 import { ProcurementPage } from "./pages/ProcurementPage";
 import { GalleryPage } from "./pages/GalleryPage";
+import { NewsMediaPage } from "./pages/NewsMediaPage";
+import { BlogsPage } from "./pages/BlogsPage";
 
 import { triggerHaptic } from "./utils/haptics";
 
@@ -63,7 +67,7 @@ export const App: React.FC = () => {
         {/* Android PWA Install Banner */}
         <PWAInstallBanner />
 
-        {/* Clean Corporate Navbar */}
+        {/* Clean Corporate Navbar with Top Utility Bar */}
         <Navbar
           onOpenRFQ={handleOpenRFQ}
           onOpenProjectBuilder={handleOpenProjectBuilder}
@@ -83,7 +87,27 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* 2. Standalone Hospital Development Page */}
+            {/* 2. Standalone Company Profile Page */}
+            <Route
+              path="/about"
+              element={
+                <AboutPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 3. Standalone Our Team Page */}
+            <Route
+              path="/team"
+              element={
+                <TeamPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 4. Standalone Hospital Development Page */}
             <Route
               path="/hospital-development"
               element={
@@ -93,7 +117,7 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* 3. Standalone Interactive CAD Floorplan Page */}
+            {/* 5. Standalone Interactive CAD Floorplan Page */}
             <Route
               path="/cad-floorplan"
               element={
@@ -103,7 +127,7 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* 4. Standalone 365-Day Execution Highway Page */}
+            {/* 6. Standalone 365-Day Execution Highway Page */}
             <Route
               path="/execution-highway"
               element={
@@ -113,7 +137,7 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* 5. Standalone B2B Procurement Catalog Page */}
+            {/* 7. Standalone B2B Procurement Catalog Page */}
             <Route
               path="/procurement"
               element={
@@ -123,11 +147,31 @@ export const App: React.FC = () => {
               }
             />
 
-            {/* 6. Standalone Project & Facility Gallery Page */}
+            {/* 8. Standalone Project & Facility Gallery Page */}
             <Route
               path="/gallery"
               element={
                 <GalleryPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 9. Standalone News & Media Center Page */}
+            <Route
+              path="/news-media"
+              element={
+                <NewsMediaPage
+                  onOpenRFQ={handleOpenRFQ}
+                />
+              }
+            />
+
+            {/* 10. Standalone Industry Blogs & Perspectives Page */}
+            <Route
+              path="/blogs"
+              element={
+                <BlogsPage
                   onOpenRFQ={handleOpenRFQ}
                 />
               }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, MapPin, Building2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, ArrowRight, ShieldCheck, Mail, Phone, MapPin, Building2, Loader2, Landmark } from "lucide-react";
 import { SECTORS } from "../../data/sectorsData";
 import { submitInquiryToEmail } from "../../utils/formSubmit";
 import { triggerHaptic } from "../../utils/haptics";
@@ -31,7 +31,10 @@ export const ContactLeadGen: React.FC = () => {
   return (
     <section id="contact" className="py-24 bg-white border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Direct Institutional Channel & Multi-State Locations */}
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#008744] text-xs font-mono font-bold tracking-wider uppercase">
               <span>Direct Institutional Channel</span>
@@ -45,22 +48,75 @@ export const ContactLeadGen: React.FC = () => {
               Connect with our master project execution desk to review your tender documents, engineering BOQs, or custom facility development scope. All messages are directly routed to <strong>info@hsonestepsolutions.com</strong>.
             </p>
 
-            <div className="space-y-4 pt-4 border-t border-slate-100 text-xs font-mono text-slate-600">
+            {/* Direct Contact Info */}
+            <div className="space-y-3 pt-4 border-t border-slate-100 text-xs font-mono text-slate-700">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#008744]" />
-                <a href="mailto:info@hsonestepsolutions.com" className="hover:text-[#008744] transition-colors">info@hsonestepsolutions.com</a>
+                <a href="mailto:info@hsonestepsolutions.com" className="hover:text-[#008744] font-bold transition-colors">info@hsonestepsolutions.com</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#008744]" />
-                <span><a href="tel:+919130322864" className="hover:text-[#008744] transition-colors">+91 9130322864</a> / <a href="tel:+917739322864" className="hover:text-[#008744] transition-colors">+91 7739322864</a></span>
+                <span><a href="tel:+919130322864" className="hover:text-[#008744] font-bold transition-colors">+91 9130322864</a> / <a href="tel:+917739322864" className="hover:text-[#008744] font-bold transition-colors">+91 7739322864</a></span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-[#008744]" />
-                <span>Gandharv Nagari, Moshi, Bhosari - 411039, Pune, Maharashtra</span>
+            </div>
+
+            {/* Multi-State Presence List */}
+            <div className="pt-4 border-t border-slate-100 space-y-3">
+              <span className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider block">
+                Multi-State Presence Across India:
+              </span>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs font-mono">
+                
+                {/* Pune */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-[#008744] font-bold">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span>Pune (Headquarters)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    Gandharv Nagari, Moshi, Bhosari - 411039
+                  </p>
+                </div>
+
+                {/* Hyderabad */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-slate-900 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Hyderabad (South Hub)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    Hitec City / Madhapur Corridor
+                  </p>
+                </div>
+
+                {/* Bihar */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-slate-900 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Bihar (State Projects)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    Patna NHM & Public Health Desk
+                  </p>
+                </div>
+
+                {/* Delhi */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-slate-900 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Delhi (Liaison Desk)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    Connaught Place, New Delhi
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
 
+          {/* Right Column: Contact Form */}
           <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
             {submitted ? (
               <div className="py-12 text-center space-y-3">

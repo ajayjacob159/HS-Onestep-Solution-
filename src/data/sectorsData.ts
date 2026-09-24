@@ -149,13 +149,13 @@ export const SECTORS: Sector[] = [
   },
   {
     id: "construction-infrastructure",
-    title: "Construction & Infrastructure",
-    subtitle: "Heavy Civil Engineering, Industrial Facilities & Turnkey Fit-Outs",
+    title: "Heavy Civil & Structural Steel",
+    subtitle: "Prefabricated PEB Steel, Industrial Superstructures & High-Tolerance Civil Execution",
     category: "infrastructure",
-    badge: "CIVIL & STRUCTURAL",
-    tagline: "High-Tolerance Civil Execution Built for Decades of Heavy Operation",
+    badge: "CIVIL & STRUCTURAL STEEL",
+    tagline: "High-Tolerance Civil Execution & Industrial Structural Steel Framing",
     overview: "Full-scope civil engineering, reinforced concrete framing, heavy structural steel fabrication, specialized radiation shielding, seismic foundations, and institutional facility construction.",
-    representativeVisual: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1000&q=80",
+    representativeVisual: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
     iconName: "Hammer",
     specifications: [
       { label: "Engineering", value: "Heavy Civil & Structural Steel" },
