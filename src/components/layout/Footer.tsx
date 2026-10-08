@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
                 <span>Gandharv Nagari, Moshi, Bhosari - 411039</span>
               </div>
               <div className="pt-1">
-                <strong className="text-slate-900 font-bold block">Hyderabad • Bihar • Delhi:</strong>
+                <strong className="text-slate-900 font-bold block">Hyderabad • Bihar • Delhi • UP • Gujarat:</strong>
                 <span>Regional Desks & State Operations</span>
               </div>
               <div className="pt-2 flex items-center space-x-2">
@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRFQ }) => {
         {/* Bottom Clean Legal Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-500 space-y-3 md:space-y-0 font-mono">
           <div>
-            © {new Date().getFullYear()} <strong className="text-slate-800 font-bold">HS ONE STEP SOLUTIONS</strong>. All rights reserved. • Multi-State Presence: Pune • Hyderabad • Bihar • Delhi.
+            © {new Date().getFullYear()} <strong className="text-slate-800 font-bold">HS ONE STEP SOLUTIONS</strong>. All rights reserved. • Multi-State Presence: Pune • Hyderabad • Bihar • Delhi • Uttar Pradesh • Gujarat.
           </div>
           <div className="flex items-center space-x-5">
             <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>

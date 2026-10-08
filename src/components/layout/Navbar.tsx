@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
               <span>Multi-State Presence:</span>
             </span>
             <span className="font-semibold text-slate-200">
-              Pune (HQ) • Hyderabad • Bihar • Delhi
+              Pune (HQ) • Hyderabad • Bihar • Delhi • Uttar Pradesh • Gujarat
             </span>
           </div>
 

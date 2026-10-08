@@ -112,6 +112,28 @@ export const ContactLeadGen: React.FC = () => {
                   </p>
                 </div>
 
+                {/* Uttar Pradesh */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-slate-900 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Uttar Pradesh (Lucknow Hub)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    Gomti Nagar, Lucknow
+                  </p>
+                </div>
+
+                {/* Gujarat */}
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-center space-x-1.5 text-slate-900 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-[#008744]" />
+                    <span>Gujarat (Ahmedabad Desk)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-1">
+                    SG Highway, Ahmedabad
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>

@@ -14,15 +14,15 @@ export interface NewsArticle {
 export const NEWS_DATA: NewsArticle[] = [
   {
     id: "news-01",
-    title: "HS ONE STEP SOLUTIONS Expands Multi-State Operations Across Pune, Hyderabad, Bihar & Delhi",
+    title: "HS ONE STEP SOLUTIONS Expands Multi-State Operations Across Pune, Hyderabad, Bihar, Delhi, UP & Gujarat",
     category: "Corporate Expansion",
-    date: "September 2026",
+    date: "October 2026",
     source: "HS Corporate Press Desk",
-    summary: "Strengthening operational footprints to deliver seamless turnkey healthcare, civil infrastructure, and institutional procurement projects across West, South, North, and East India.",
+    summary: "Strengthening nationwide operational footprints to deliver seamless turnkey healthcare, civil infrastructure, and institutional procurement projects across West, South, North, East, and Central India.",
     image: "/corporate-building.jpg",
     badge: "EXPANSION",
     linkText: "Read Press Release",
-    fullStory: "HS ONE STEP SOLUTIONS has announced the formal expansion of its multi-state operational hubs across Pune (Headquarters), Hyderabad (South Tech & Operations), Bihar (State Projects Desk), and Delhi (Institutional Liaison). This expansion allows the company to deploy multidisciplinary engineering and medical sourcing teams rapidly to client project sites nationwide."
+    fullStory: "HS ONE STEP SOLUTIONS has announced the formal expansion of its multi-state operational hubs across Pune (Headquarters), Hyderabad (South Tech Hub), Bihar (State Projects Desk), Delhi (Institutional Liaison), Uttar Pradesh (Lucknow Hub), and Gujarat (Ahmedabad Desk). This expansion allows the company to deploy multidisciplinary engineering and medical sourcing teams rapidly to client project sites nationwide."
   },
   {
     id: "news-02",

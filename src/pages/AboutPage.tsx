@@ -50,7 +50,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            A dynamic and diversified organization delivering reliable, innovative, and end-to-end turnkey solutions across the Government, Public, and Private sectors with multi-state presence in Pune, Hyderabad, Bihar, and Delhi.
+            A dynamic and diversified organization delivering reliable, innovative, and end-to-end turnkey solutions across the Government, Public, and Private sectors with multi-state presence in Pune, Hyderabad, Bihar, Delhi, Uttar Pradesh, and Gujarat.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -75,7 +75,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
           </div>
         </div>
 
-        {/* Multi-State Operational Presence Cards */}
+        {/* Multi-State Operational Presence Cards (6 States) */}
         <div className="mt-12 pt-8 border-t border-slate-200">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -87,14 +87,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
               </h2>
             </div>
             <span className="text-xs font-mono text-slate-500 hidden sm:block">
-              WEST • SOUTH • EAST • NORTH
+              PUNE • HYDERABAD • BIHAR • DELHI • UTTAR PRADESH • GUJARAT
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             
-            {/* Pune */}
-            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all">
+            {/* 1. Pune */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
               <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
                 <MapPin className="w-4 h-4" />
               </div>
@@ -110,8 +110,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
               </div>
             </div>
 
-            {/* Hyderabad */}
-            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all">
+            {/* 2. Hyderabad */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
               <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
                 <MapPin className="w-4 h-4" />
               </div>
@@ -127,8 +127,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
               </div>
             </div>
 
-            {/* Bihar */}
-            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all">
+            {/* 3. Bihar */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
               <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
                 <MapPin className="w-4 h-4" />
               </div>
@@ -144,8 +144,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
               </div>
             </div>
 
-            {/* Delhi */}
-            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all">
+            {/* 4. Delhi */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
               <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
                 <MapPin className="w-4 h-4" />
               </div>
@@ -158,6 +158,40 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenRFQ }) => {
               </p>
               <div className="text-[11px] font-mono text-slate-500 mt-3 pt-2 border-t border-slate-100">
                 Government & Legal Advisory Desk
+              </div>
+            </div>
+
+            {/* 5. Uttar Pradesh */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
+              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold uppercase">
+                INFRASTRUCTURE HUB (CENTRAL-NORTH)
+              </span>
+              <h3 className="text-base font-bold text-slate-900 mt-2">Uttar Pradesh (Lucknow Hub)</h3>
+              <p className="text-xs text-slate-600 mt-1">
+                Gomti Nagar / Capital Corridor
+              </p>
+              <div className="text-[11px] font-mono text-slate-500 mt-3 pt-2 border-t border-slate-100">
+                Public Health, NHM & Hospital Projects
+              </div>
+            </div>
+
+            {/* 6. Gujarat */}
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-[#008744] hover:shadow-md transition-all">
+              <div className="w-8 h-8 rounded-xl bg-emerald-50 text-[#008744] flex items-center justify-center font-bold mb-3 border border-emerald-200">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold uppercase">
+                INDUSTRIAL & PORT HUB (WEST)
+              </span>
+              <h3 className="text-base font-bold text-slate-900 mt-2">Gujarat (Ahmedabad Desk)</h3>
+              <p className="text-xs text-slate-600 mt-1">
+                SG Highway / Industrial Corridor
+              </p>
+              <div className="text-[11px] font-mono text-slate-500 mt-3 pt-2 border-t border-slate-100">
+                Industrial Sourcing & Heavy Engineering Desk
               </div>
             </div>
 
