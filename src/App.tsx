@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { ModalRFQ } from "./components/layout/ModalRFQ";
@@ -19,6 +19,91 @@ import { NewsMediaPage } from "./pages/NewsMediaPage";
 import { BlogsPage } from "./pages/BlogsPage";
 
 import { triggerHaptic } from "./utils/haptics";
+
+const ROUTE_SEO: Record<string, { title: string; description: string }> = {
+  "/": {
+    title: "HS ONE STEP SOLUTIONS | One Partner. Multiple Solutions. Complete Project Execution.",
+    description: "HS ONE STEP SOLUTIONS is an integrated B2B, government, and institutional solutions company serving Government, Public & Private sectors across turnkey healthcare, civil infrastructure, and procurement."
+  },
+  "/about": {
+    title: "About Us & Multi-State Operations | HS ONE STEP SOLUTIONS",
+    description: "Learn about HS ONE STEP SOLUTIONS, our operational hubs in Pune (HQ), Hyderabad, Bihar, Delhi, Uttar Pradesh, and Gujarat, and our single-vendor execution model."
+  },
+  "/team": {
+    title: "Executive Leadership Team & Governance Board | HS ONE STEP SOLUTIONS",
+    description: "Meet the leadership of HS ONE STEP SOLUTIONS: Mr. Pratyaksh Pandey (Founder & CEO), Mr. Ritu Raj Pandey (Vice President), Mr. Akhtar Zamal (CMO), Rocky Jacob (CTO), and Aarati Sah (Legal Advisor)."
+  },
+  "/hospital-development": {
+    title: "Turnkey Hospital Development & Cleanroom Engineering | HS ONE STEP SOLUTIONS",
+    description: "End-to-end turnkey hospital infrastructure from empty site to NABH operational handover: Modular OTs, MGPS pipelines, ICU suites, and diagnostic staging."
+  },
+  "/cad-floorplan": {
+    title: "Interactive BIM & CAD Healthcare Architecture | HS ONE STEP SOLUTIONS",
+    description: "Explore interactive 2D/3D BIM CAD floorplans, sterile cleanroom workflows, and hospital zoning layouts engineered by HS ONE STEP SOLUTIONS."
+  },
+  "/execution-highway": {
+    title: "365-Day Turnkey Project Execution Highway | HS ONE STEP SOLUTIONS",
+    description: "Review our standardized 15-stage 365-day execution roadmap ensuring on-time project completion and single-point accountability."
+  },
+  "/procurement": {
+    title: "Institutional B2B Procurement & Direct OEM Catalog | HS ONE STEP SOLUTIONS",
+    description: "Browse 1,200+ certified medical, surgical, civil, energy, and commercial kitchen products with direct OEM sourcing and institutional BOQ fulfillment."
+  },
+  "/gallery": {
+    title: "Turnkey Project & Facility Gallery | HS ONE STEP SOLUTIONS",
+    description: "High-definition photo and video documentation of completed modular operation theatres, civil framing, and healthcare facilities across India."
+  },
+  "/news-media": {
+    title: "Press Releases & Media Center | HS ONE STEP SOLUTIONS",
+    description: "Official press releases, corporate announcements, state expansions, and institutional milestone updates from HS ONE STEP SOLUTIONS."
+  },
+  "/blogs": {
+    title: "Engineering & Healthcare Industry Perspectives Blog | HS ONE STEP SOLUTIONS",
+    description: "Insights, whitepapers, and guides on turnkey hospital development, NABH compliance, greenfield construction, and institutional procurement."
+  }
+};
+
+const RouteMetadataHandler: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change if not targeting an anchor hash
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+
+    const currentSeo = ROUTE_SEO[location.pathname] || ROUTE_SEO["/"];
+    document.title = currentSeo.title;
+
+    // Update Meta Description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", currentSeo.description);
+    }
+
+    // Update OpenGraph Title & Description
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", currentSeo.title);
+    }
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", currentSeo.description);
+    }
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", `https://www.hsonestepsolutions.com${location.pathname === "/" ? "" : location.pathname}`);
+    }
+
+    // Update Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", `https://www.hsonestepsolutions.com${location.pathname === "/" ? "" : location.pathname}`);
+    }
+  }, [location.pathname, location.hash]);
+
+  return null;
+};
 
 export const App: React.FC = () => {
   const [rfqModalOpen, setRfqModalOpen] = useState(false);
@@ -63,6 +148,7 @@ export const App: React.FC = () => {
 
   return (
     <BrowserRouter>
+      <RouteMetadataHandler />
       <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
         {/* Android PWA Install Banner */}
         <PWAInstallBanner />
