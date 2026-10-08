@@ -107,13 +107,13 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#008744]/50 transition-all">
               <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
                 
-                {/* Left: Founder Portrait */}
+                {/* Left: Founder Portrait (Matching Fixed Aspect Ratio) */}
                 <div className="sm:col-span-5 flex flex-col items-center">
-                  <div className="relative w-44 sm:w-full max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100">
+                  <div className="relative w-44 sm:w-48 lg:w-52 aspect-[3/4] max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/founder.jpg"
                       alt="Mr. Pratyaksh Pandey - Founder & CEO, HS ONE STEP SOLUTIONS"
-                      className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -174,13 +174,13 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#008744]/50 transition-all">
               <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
                 
-                {/* Left: VP Portrait */}
+                {/* Left: VP Portrait (Matching Fixed Aspect Ratio) */}
                 <div className="sm:col-span-5 flex flex-col items-center">
-                  <div className="relative w-44 sm:w-full max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100">
+                  <div className="relative w-44 sm:w-48 lg:w-52 aspect-[3/4] max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/ritu-raj-pandey.jpg"
                       alt="Mr. Ritu Raj Pandey - Vice President, HS ONE STEP SOLUTIONS"
-                      className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -241,7 +241,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
         </div>
 
         {/* ============================================================ */}
-        {/* TIER 2: EXECUTIVE DIRECTORS & LEGAL GOVERNANCE (3 COLUMNS SIDE BY SIDE) */}
+        {/* TIER 2: EXECUTIVE DIRECTORS & LEGAL GOVERNANCE (3 COLUMNS SIDE BY SIDE - IDENTICAL PHOTO SIZES) */}
         {/* ============================================================ */}
         <div className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
@@ -262,13 +262,13 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between relative overflow-hidden group hover:border-[#008744]/50 transition-all">
               <div className="space-y-5 text-left">
                 
-                {/* Centered / Aligned Photo Container */}
+                {/* Centered / Aligned Photo Container (Uniform 3:4 Aspect Ratio) */}
                 <div className="flex flex-col items-center">
-                  <div className="relative w-44 sm:w-48 max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100">
+                  <div className="relative w-44 sm:w-48 aspect-[3/4] max-w-[190px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/akhtar-zamal.jpg"
                       alt="Mr. Akhtar Zamal - Chief Marketing Officer (CMO), HS ONE STEP SOLUTIONS"
-                      className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -286,7 +286,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                     </div>
                   </div>
 
-                  <div className="w-full max-w-[200px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
+                  <div className="w-full max-w-[190px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
                     <div className="flex items-center space-x-1.5">
                       <Megaphone className="w-3 h-3 text-[#008744]" />
                       <span className="font-bold text-slate-900 text-[9px]">MARKETING & SALES</span>
@@ -324,13 +324,13 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between relative overflow-hidden group hover:border-[#008744]/50 transition-all">
               <div className="space-y-5 text-left">
                 
-                {/* Centered / Aligned Photo Container */}
+                {/* Centered / Aligned Photo Container (Uniform 3:4 Aspect Ratio) */}
                 <div className="flex flex-col items-center">
-                  <div className="relative w-44 sm:w-48 max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100">
+                  <div className="relative w-44 sm:w-48 aspect-[3/4] max-w-[190px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/rocky-jacob.jpg"
                       alt="Rocky Jacob - Chief Technology Officer (CTO), HS ONE STEP SOLUTIONS"
-                      className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -348,7 +348,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                     </div>
                   </div>
 
-                  <div className="w-full max-w-[200px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
+                  <div className="w-full max-w-[190px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
                     <div className="flex items-center space-x-1.5">
                       <Code2 className="w-3 h-3 text-[#008744]" />
                       <span className="font-bold text-slate-900 text-[9px]">ENTERPRISE ARCHITECTURE</span>
@@ -386,13 +386,13 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between relative overflow-hidden group hover:border-[#008744]/50 transition-all">
               <div className="space-y-5 text-left">
                 
-                {/* Centered / Aligned Photo Container */}
+                {/* Centered / Aligned Photo Container (Uniform 3:4 Aspect Ratio) */}
                 <div className="flex flex-col items-center">
-                  <div className="relative w-44 sm:w-48 max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100">
+                  <div className="relative w-44 sm:w-48 aspect-[3/4] max-w-[190px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/aarati-sah.jpg"
                       alt="Aarati Sah - Legal Advisor, Advocate at Supreme Court of India"
-                      className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -410,7 +410,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                     </div>
                   </div>
 
-                  <div className="w-full max-w-[200px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
+                  <div className="w-full max-w-[190px] mt-3 bg-white border border-slate-200 p-2 rounded-xl shadow-sm flex items-center justify-between text-[10px] font-mono">
                     <div className="flex items-center space-x-1.5">
                       <Gavel className="w-3 h-3 text-[#D4AF37]" />
                       <span className="font-bold text-slate-900 text-[9px]">SUPREME COURT</span>
