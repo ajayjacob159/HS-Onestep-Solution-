@@ -179,7 +179,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                   <div className="relative w-44 sm:w-48 lg:w-52 aspect-[3/4] max-w-[200px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 flex-shrink-0">
                     <img
                       src="/ritu-raj-pandey.jpg"
-                      alt="Mr. Ritu Raj Pandey - Vice President, HS ONE STEP SOLUTIONS"
+                      alt="Mr. Rituraj Pandey - Vice President, HS ONE STEP SOLUTIONS"
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     
@@ -193,7 +193,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                     </div>
 
                     <div className="absolute bottom-2.5 left-3 right-3 text-white">
-                      <h4 className="text-sm font-bold tracking-tight">Mr. Ritu Raj Pandey</h4>
+                      <h4 className="text-sm font-bold tracking-tight">Mr. Rituraj Pandey</h4>
                       <p className="text-[10px] text-[#D4AF37] font-mono font-medium">Vice President</p>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                       EXECUTIVE LEADERSHIP
                     </span>
                     <h4 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                      Mr. Ritu Raj Pandey
+                      Mr. Rituraj Pandey
                     </h4>
                     <p className="text-xs font-mono text-[#D4AF37] font-bold">
                       Vice President, HS ONE STEP SOLUTIONS
@@ -224,7 +224,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
                   <div className="text-slate-700 text-xs sm:text-sm leading-relaxed space-y-2">
                     <p>
                       <span className="font-extrabold text-slate-900 bg-emerald-50 border border-emerald-200 text-[#008744] px-2 py-0.5 rounded-lg inline-block mr-1 mb-1">
-                        Mr. Ritu Raj Pandey serves as Vice President
+                        Mr. Rituraj Pandey serves as Vice President
                       </span>
                       of HS ONE STEP SOLUTIONS, adding tremendous value and strategic leadership in building the organization.
                     </p>

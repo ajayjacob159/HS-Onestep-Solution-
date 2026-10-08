@@ -31,7 +31,7 @@ const ROUTE_SEO: Record<string, { title: string; description: string }> = {
   },
   "/team": {
     title: "Executive Leadership Team & Governance Board | HS ONE STEP SOLUTIONS",
-    description: "Meet the leadership of HS ONE STEP SOLUTIONS: Mr. Pratyaksh Pandey (Founder & CEO), Mr. Ritu Raj Pandey (Vice President), Mr. Akhtar Zamal (CMO), Rocky Jacob (CTO), and Aarati Sah (Legal Advisor)."
+    description: "Meet the leadership of HS ONE STEP SOLUTIONS: Mr. Pratyaksh Pandey (Founder & CEO), Mr. Rituraj Pandey (Vice President), Mr. Akhtar Zamal (CMO), Rocky Jacob (CTO), and Aarati Sah (Legal Advisor)."
   },
   "/hospital-development": {
     title: "Turnkey Hospital Development & Cleanroom Engineering | HS ONE STEP SOLUTIONS",
