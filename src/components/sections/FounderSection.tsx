@@ -18,7 +18,9 @@ import {
   Scale,
   Gavel,
   Cpu,
-  Code2
+  Code2,
+  TrendingUp,
+  Megaphone
 } from "lucide-react";
 import { triggerHaptic } from "../../utils/haptics";
 
@@ -212,7 +214,145 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
           </div>
         </div>
 
-        {/* 2. CHIEF TECHNOLOGY OFFICER: ROCKY JACOB */}
+        {/* 2. VICE PRESIDENT: MR. RITU RAJ PANDEY */}
+        <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
+            
+            {/* Left: Compact Portrait & VP Badge */}
+            <div className="md:col-span-4 lg:col-span-4 flex flex-col items-center">
+              <div className="relative w-44 sm:w-48 lg:w-52 max-w-[220px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
+                <img
+                  src="/ritu-raj-pandey.jpg"
+                  alt="Mr. Ritu Raj Pandey - Vice President, HS ONE STEP SOLUTIONS"
+                  className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Gradient Scrim at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                
+                {/* VP Standing Badge */}
+                <div className="absolute top-2.5 right-2.5">
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-900/90 backdrop-blur-md text-[#D4AF37] border border-[#D4AF37]/50 text-[9px] font-mono font-extrabold uppercase shadow-sm flex items-center space-x-1">
+                    <Award className="w-3 h-3 text-[#D4AF37]" />
+                    <span>VICE PRESIDENT</span>
+                  </span>
+                </div>
+
+                {/* Name Tag on Photo */}
+                <div className="absolute bottom-2.5 left-3 right-3 text-white">
+                  <h3 className="text-sm font-bold tracking-tight">Mr. Ritu Raj Pandey</h3>
+                  <p className="text-[10px] text-[#D4AF37] font-mono font-medium">Vice President</p>
+                </div>
+              </div>
+
+              {/* Bar Standing Badge below photo */}
+              <div className="w-full max-w-[220px] mt-3 bg-white border border-slate-200 p-2.5 rounded-xl shadow-sm flex items-center justify-between text-[11px] font-mono">
+                <div className="flex items-center space-x-1.5">
+                  <TrendingUp className="w-3.5 h-3.5 text-[#008744]" />
+                  <span className="font-bold text-slate-900 text-[10px]">STRATEGIC OPERATIONS</span>
+                </div>
+                <span className="text-[#008744] font-bold text-[10px]">VP</span>
+              </div>
+            </div>
+
+            {/* Right: Executive Leadership Narrative */}
+            <div className="md:col-span-8 lg:col-span-8 space-y-4 text-left">
+              <div>
+                <span className="text-xs font-mono text-[#008744] font-extrabold uppercase tracking-widest block mb-1">
+                  EXECUTIVE LEADERSHIP & STRATEGIC GROWTH
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                  Mr. Ritu Raj Pandey
+                </h3>
+                <p className="text-xs sm:text-sm font-mono text-[#D4AF37] font-bold mt-0.5">
+                  Vice President, HS ONE STEP SOLUTIONS
+                </p>
+              </div>
+
+              {/* Narrative */}
+              <div className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p>
+                  <span className="font-extrabold text-slate-900 bg-emerald-50 border border-emerald-200 text-[#008744] px-2.5 py-1 rounded-xl inline-block shadow-sm mr-1.5 mb-1.5 sm:mb-0">
+                    Mr. Ritu Raj Pandey serves as Vice President of HS ONE STEP SOLUTIONS
+                  </span>
+                  , adding significant value and strategic leadership in building the organization. He spearheads corporate operations, strategic business expansion, key client relationships, and nationwide turnkey delivery frameworks across healthcare, infrastructure, and institutional sectors.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* 3. CHIEF MARKETING OFFICER: MR. AKHTAR ZAMAL */}
+        <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
+            
+            {/* Left: Compact Portrait & CMO Badge */}
+            <div className="md:col-span-4 lg:col-span-4 flex flex-col items-center">
+              <div className="relative w-44 sm:w-48 lg:w-52 max-w-[220px] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
+                <img
+                  src="/akhtar-zamal.jpg"
+                  alt="Mr. Akhtar Zamal - Chief Marketing Officer (CMO), HS ONE STEP SOLUTIONS"
+                  className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Gradient Scrim at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                
+                {/* CMO Standing Badge */}
+                <div className="absolute top-2.5 right-2.5">
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-900/90 backdrop-blur-md text-[#D4AF37] border border-[#D4AF37]/50 text-[9px] font-mono font-extrabold uppercase shadow-sm flex items-center space-x-1">
+                    <Megaphone className="w-3 h-3 text-[#D4AF37]" />
+                    <span>CMO</span>
+                  </span>
+                </div>
+
+                {/* Name Tag on Photo */}
+                <div className="absolute bottom-2.5 left-3 right-3 text-white">
+                  <h3 className="text-sm font-bold tracking-tight">Mr. Akhtar Zamal</h3>
+                  <p className="text-[10px] text-[#D4AF37] font-mono font-medium">Chief Marketing Officer</p>
+                </div>
+              </div>
+
+              {/* Bar Standing Badge below photo */}
+              <div className="w-full max-w-[220px] mt-3 bg-white border border-slate-200 p-2.5 rounded-xl shadow-sm flex items-center justify-between text-[11px] font-mono">
+                <div className="flex items-center space-x-1.5">
+                  <Megaphone className="w-3.5 h-3.5 text-[#008744]" />
+                  <span className="font-bold text-slate-900 text-[10px]">MARKETING & SALES</span>
+                </div>
+                <span className="text-[#008744] font-bold text-[10px]">CMO</span>
+              </div>
+            </div>
+
+            {/* Right: Marketing Leadership Narrative */}
+            <div className="md:col-span-8 lg:col-span-8 space-y-4 text-left">
+              <div>
+                <span className="text-xs font-mono text-[#008744] font-extrabold uppercase tracking-widest block mb-1">
+                  MARKETING STRATEGY & BUSINESS DEVELOPMENT
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                  Mr. Akhtar Zamal
+                </h3>
+                <p className="text-xs sm:text-sm font-mono text-[#D4AF37] font-bold mt-0.5">
+                  Chief Marketing Officer (CMO), HS ONE STEP SOLUTIONS
+                </p>
+              </div>
+
+              {/* Narrative */}
+              <div className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p>
+                  <span className="font-extrabold text-slate-900 bg-emerald-50 border border-emerald-200 text-[#008744] px-2.5 py-1 rounded-xl inline-block shadow-sm mr-1.5 mb-1.5 sm:mb-0">
+                    Mr. Akhtar Zamal serves as Chief Marketing Officer (CMO) of HS ONE STEP SOLUTIONS
+                  </span>
+                  , overseeing comprehensive marketing, brand governance, and sales strategies. Bringing extensive real-time market experience into marketing and sales strategies to the board, he leads the formulation of institutional outreach programs, client engagement pipelines, and market growth initiatives across turnkey sectors.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* 4. CHIEF TECHNOLOGY OFFICER: ROCKY JACOB */}
         <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
             
@@ -281,7 +421,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ onOpenRFQ }) => 
           </div>
         </div>
 
-        {/* 3. LEGAL ADVISOR: AARATI SAH (ADVOCATE AT SUPREME COURT OF INDIA) */}
+        {/* 5. LEGAL ADVISOR: AARATI SAH (ADVOCATE AT SUPREME COURT OF INDIA) */}
         <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
             

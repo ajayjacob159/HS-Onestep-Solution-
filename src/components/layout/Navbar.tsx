@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRFQ, onOpenProjectBuilder 
                       <Users className="w-4 h-4 text-[#D4AF37]" />
                       <span>Our Team</span>
                     </div>
-                    <div className="text-[10px] text-slate-500 font-mono mt-0.5">Founder & CEO, CTO, Legal Advisor & PMO</div>
+                    <div className="text-[10px] text-slate-500 font-mono mt-0.5">Founder & CEO, VP, CMO, CTO, Legal Advisor</div>
                   </Link>
 
                   {/* Institutional Contact */}
